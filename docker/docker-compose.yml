@@ -1,0 +1,22 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+    expose:
+      - "6379"
+  web:
+    tty: true
+    stdin_open: true
+    build: ./
+    container_name: web_application
+    privileged: true
+    volumes:
+      - ../:/var/www/html/voyce
+    ports:
+      - "3000:3000"
+      - "80:80"
+    depends_on:
+      - redis
