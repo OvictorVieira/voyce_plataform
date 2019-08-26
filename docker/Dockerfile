@@ -85,6 +85,7 @@ RUN set -eux; \
 # install things globally, for great justice
 # and don't create ".bundle" in all our apps
 RUN gem install bundle rails
+RUN apt-get update && apt-get install iputils-ping
 ENV GEM_HOME /usr/local/bundle
 ENV BUNDLE_PATH="$GEM_HOME" \
 	BUNDLE_SILENCE_ROOT_WARNING=1 \
