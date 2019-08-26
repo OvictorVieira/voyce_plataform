@@ -25,3 +25,4 @@ Gemfile.lock
 yarn.lock
 /vendor
 /.idea/
+/firestore_data

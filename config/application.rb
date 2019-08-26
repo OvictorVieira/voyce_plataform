@@ -18,6 +18,9 @@ module Voyce
 
     config.app = OpenStruct.new
     config.app.assets = OpenStruct.new
+    config.app.firebase = OpenStruct.new
+    config.app.firebase.project_id = OpenStruct.new
+    config.app.firebase.private_key = File.open("#{Rails.root}/config/voyce-firebase.json").read
     config.app.assets.js_prefix = 'app/assets/javascripts/'.freeze
     config.app.assets.style_prefix = 'app/assets/stylesheets/'.freeze
   end
