@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
-  root to: 'authentication#index'
+  root to: 'guest#index'
 
-  get '/login', to: 'authentication#login'
+  namespace :guest do
+    get '/login', to: 'guest#login'
+  end
 
   namespace :dashboard do
-
+    get '/home', to: 'home#index'
   end
 
 end
