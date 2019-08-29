@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  root to: 'guest#index'
+  root to: 'landing_page#index'
 
   namespace :guest do
-    get '/login', to: 'guest#login'
+    get '/login', to: 'guests#login'
   end
 
   namespace :dashboard do

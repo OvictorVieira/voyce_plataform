@@ -5,7 +5,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="{{ route('home') }}">
+        <a class="navbar-brand pt-0" href="<%= dashboard_home_url %>">
             <img src="{{ asset('argon') }}/img/brand/blue.png" class="navbar-brand-img" alt="...">
         </a>
         <!-- User -->
@@ -27,7 +27,7 @@
                         <span>Perfil</span>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+                    <a href="#" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                         <i class="ni ni-user-run"></i>
                         <span>Sair</span>
@@ -41,7 +41,7 @@
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                        <a href="{{ route('home') }}">
+                        <a href="<%= dashboard_home_url %>">
                             <img src="{{ asset('argon') }}/img/brand/blue.png">
                         </a>
                     </div>
@@ -56,7 +56,7 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="<%= dashboard_home_url %>">
                         <i class="fas fa-home text-primary"></i> Início
                     </a>
                 </li>
@@ -66,7 +66,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('proposal.list') }}">
+                    <a class="nav-link" href="#">
                         <i class="fas fa-hand-holding-usd text-primary"></i> Planos
                     </a>
                 </li>
