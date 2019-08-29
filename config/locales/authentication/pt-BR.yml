@@ -1,0 +1,7 @@
+pt-BR:
+  authentication:
+    labels:
+      fields:
+        download: 'Baixar'
+        login: 'Entrar'
+
