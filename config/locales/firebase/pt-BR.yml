@@ -1,0 +1,5 @@
+pt-BR:
+  firebase:
+    errors:
+      login:
+        firebase_comunication_error: 'Ocorreu um erro inesperado, tente novamente'

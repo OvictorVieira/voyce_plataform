@@ -1,6 +1,4 @@
-class HomeController < ActionController::Base
-
-  def index
-
+class HomeController < ApplicationController
+  def login
   end
 end
