@@ -1,0 +1,157 @@
+<%= render 'dashboard/partials_shared/sidebar' %>
+
+<div class="main-content">
+
+  <%= render 'dashboard/partials_shared/navbar' %>
+
+  <%= render 'dashboard/partials_shared/header', locals: { title: 'Editar Plano' } %>
+
+  <div class="container-fluid mt--6">
+    <div class="row">
+      <div class="col-xl-12 order-xl-1">
+        <div class="card">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0"></h3>
+              </div>
+              <div class="col-4 text-right">
+                <a href="https://argon-dashboard-pro-laravel.creative-tim.com/user" class="btn btn-sm btn-primary">Back to list</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <form method="post" action="https://argon-dashboard-pro-laravel.creative-tim.com/user" autocomplete="off" enctype="multipart/form-data">
+              <input type="hidden" name="_token" value="tNOk9juc4sihz5hAVhIAMCtO3rvUEjD169p6MYBo">
+              <h6 class="heading-small text-muted mb-4">User information</h6>
+              <div class="pl-lg-4">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-name">Name</label>
+                  <input type="text" name="name" id="input-name" class="form-control" placeholder="Name" value="" required="" autofocus="">
+
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label" for="input-email">Email</label>
+                  <input type="email" name="email" id="input-email" class="form-control" placeholder="Email" value="" required="">
+
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label" for="input-role">Role</label>
+                  <select name="role_id" id="input-role" class="form-control" placeholder="Role" required="">
+                    <option value="">-</option>
+                    <option value="732">! ! ! These are real Roles, Wow People ! ! !</option>
+                    <option value="662">! black widow dies</option>
+                    <option value="652">! bruce banner is professor hulk</option>
+                    <option value="642">!! iron man dies in endgame</option>
+                    <option value="372">123qwe</option>
+                    <option value="752">5234234</option>
+                    <option value="1">Admin</option>
+                    <option value="142">Admin 1</option>
+                    <option value="702">administrador</option>
+                    <option value="232">alan</option>
+                    <option value="92">ASd</option>
+                    <option value="612">asdf</option>
+                    <option value="272">asdfasd</option>
+                    <option value="332">asdsadd</option>
+                    <option value="692">black panther</option>
+                    <option value="62">cddddddddddddddddddddddddddddddddddddddddddd</option>
+                    <option value="2">Creator</option>
+                    <option value="602">Customer</option>
+                    <option value="442">Dai Herrera</option>
+                    <option value="222">dasdas</option>
+                    <option value="282">ddsfsdf</option>
+                    <option value="312">Demo Role 1</option>
+                    <option value="132">dfd</option>
+                    <option value="592">dfjdffd</option>
+                    <option value="102">dfsfsf</option>
+                    <option value="382">dont buy this`</option>
+                    <option value="432">dwe</option>
+                    <option value="412">ererss</option>
+                    <option value="472">etyde</option>
+                    <option value="672">fafsdf</option>
+                    <option value="212">fgfgf</option>
+                    <option value="152">Fred Hansonf</option>
+                    <option value="392">fshdfh</option>
+                    <option value="292">Gerente</option>
+                    <option value="322">ggfdfgd</option>
+                    <option value="352">ggg</option>
+                    <option value="452">ghjghj</option>
+                    <option value="522">hedhli</option>
+                    <option value="202">Hey</option>
+                    <option value="512">hiiiii</option>
+                    <option value="12">Hola</option>
+                    <option value="582">ijoj</option>
+                    <option value="632">iron man dies</option>
+                    <option value="252">James Bond</option>
+                    <option value="492">Je mdoer</option>
+                    <option value="552">Malini</option>
+                    <option value="82">manager</option>
+                    <option value="3">Member</option>
+                    <option value="742">Morris</option>
+                    <option value="172">New Role</option>
+                    <option value="72">nmbnmnb</option>
+                    <option value="532">nurses</option>
+                    <option value="562">ofopd</option>
+                    <option value="762">ok1</option>
+                    <option value="122">qsd</option>
+                    <option value="192">Rasika</option>
+                    <option value="502">some role</option>
+                    <option value="402">ss3</option>
+                    <option value="182">Student</option>
+                    <option value="542">tes</option>
+                    <option value="712">teset</option>
+                    <option value="42">test</option>
+                    <option value="162">Test 1</option>
+                    <option value="262">Test Role</option>
+                    <option value="302">Test_2</option>
+                    <option value="32">teste</option>
+                    <option value="242">teste222</option>
+                    <option value="52">Tester</option>
+                    <option value="572">testessss</option>
+                    <option value="112">testexxxxxxxx</option>
+                    <option value="342">testfdsdfsd</option>
+                    <option value="482">testhhhh</option>
+                    <option value="682">testing</option>
+                    <option value="722">These are real Roles</option>
+                    <option value="622">tres</option>
+                    <option value="422">ttt</option>
+                    <option value="22">Ukuleleeeeee</option>
+                    <option value="362">vch</option>
+                    <option value="462">vvvv</option>
+                  </select>
+
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label" for="input-name">Profile photo</label>
+                  <div class="custom-file">
+                    <input type="file" name="photo" class="custom-file-input" id="input-picture" accept="image/*">
+                    <label class="custom-file-label" for="input-picture">Select profile photo</label>
+                  </div>
+
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label" for="input-password">Password</label>
+                  <input type="password" name="password" id="input-password" class="form-control" placeholder="Password" value="" required="">
+
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label" for="input-password-confirmation">Confirm Password</label>
+                  <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control" placeholder="Confirm Password" value="" required="">
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-success mt-4">Save</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= render 'dashboard/partials_shared/footer' %>
+
+  </div>
+
+
+</div>

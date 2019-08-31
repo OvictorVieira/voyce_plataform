@@ -1,0 +1,192 @@
+<%= render 'dashboard/partials_shared/sidebar' %>
+
+<div class="main-content">
+
+  <%= render 'dashboard/partials_shared/navbar' %>
+
+  <%= render 'dashboard/partials_shared/header', locals: { title: 'Gerencie seus planos',
+                                                           description: 'Aqui você pode visualizar e editar os seus planos de patrocínio.',
+                                                           css_class: 'col-lg-7' } %>
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0">Planos</h3>
+              </div>
+              <div class="col-4 text-right">
+                <a href="#" class="btn btn-1 btn-outline-success">Criar Plano</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+              <tr>
+                <th scope="col">Plano</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Nº Assinantes</th>
+                <th scope="col">Status</th>
+                <th scope="col"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Membro Combustão</td>
+                <td><span class="text-success mr-2">R$ 10,00</span></td>
+                <td>Data de criação</td>
+                <td>
+                  <span class="badge badge-pill badge-success text-uppercase">Ativo</span>
+                </td>
+                <td class="text-right">
+                  <div class="dropdown">
+                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                      <% if true %>
+                        <form action="" method="post">
+                          <a class="dropdown-item" href="">Editar</a>
+                          <button type="button" class="dropdown-item" onclick="confirm('Você tem certeza que deseja excluir esse Plano?') ? this.parentElement.submit() : ''">
+                            Excluir
+                          </button>
+                        </form>
+                      <% else %>
+                        <a class="dropdown-item" href="">Editar</a>
+                      <% end %>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Membro Interno Caos</td>
+                <td><span class="text-success mr-2">R$ 20,00</span></td>
+                <td>Data de criação</td>
+                <td>
+                  <span class="badge badge-pill badge-warning text-uppercase">Pausado</span>
+                </td>
+                <td class="text-right">
+                  <div class="dropdown">
+                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                      <% if true %>
+                        <form action="" method="post">
+                          <a class="dropdown-item" href="">Editar</a>
+                          <button type="button" class="dropdown-item" onclick="confirm('Você tem certeza que deseja excluir esse Plano?') ? this.parentElement.submit() : ''">
+                            Excluir
+                          </button>
+                        </form>
+                      <% else %>
+                        <a class="dropdown-item" href="">Editar</a>
+                      <% end %>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Membro Alfa</td>
+                <td><span class="text-success mr-2">R$ 30,00</span></td>
+                <td>Data de criação</td>
+                <td>
+                  <span class="badge badge-pill badge-danger text-uppercase">Inativo</span>
+                </td>
+                <td class="text-right">
+                  <div class="dropdown">
+                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                      <% if true %>
+                        <form action="" method="post">
+                          <a class="dropdown-item" href="">Editar</a>
+                          <button type="button" class="dropdown-item" onclick="confirm('Você tem certeza que deseja excluir esse Plano?') ? this.parentElement.submit() : ''">
+                            Excluir
+                          </button>
+                        </form>
+                      <% else %>
+                        <a class="dropdown-item" href="">Editar</a>
+                      <% end %>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Membro Limão</td>
+                <td><span class="text-success mr-2">R$ 40,00</span></td>
+                <td>Data de criação</td>
+                <td>
+                  <span class="badge badge-pill badge-success text-uppercase">Ativo</span>
+                </td>
+                <td class="text-right">
+                  <div class="dropdown">
+                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                      <% if true %>>
+                        <form action="" method="post">
+                          <a class="dropdown-item" href="">Editar</a>
+                          <button type="button" class="dropdown-item" onclick="confirm('Você tem certeza que deseja excluir esse Plano?') ? this.parentElement.submit() : ''">
+                            Excluir
+                          </button>
+                        </form>
+                      <% else %>>
+                        <a class="dropdown-item" href="">Editar</a>
+                      <% end %>>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Membro ANQMS</td>
+                <td><span class="text-success mr-2">R$ 50,00</span></td>
+                <td>Data de criação</td>
+                <td>
+                  <span class="badge badge-pill badge-success text-uppercase">Ativo</span>
+                </td>
+                <td class="text-right">
+                  <div class="dropdown">
+                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                      <% if true %>>
+                        <form action="" method="post">
+                          <a class="dropdown-item" href="">Editar</a>
+                          <button type="button" class="dropdown-item" onclick="confirm('Você tem certeza que deseja excluir esse Plano?') ? this.parentElement.submit() : ''">
+                            Excluir
+                          </button>
+                        </form>
+                      <% else %>>
+                        <a class="dropdown-item" href="">Editar</a>
+                      <% end %>>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination -->
+          <div class="card-footer py-4">
+            <nav class="d-flex justify-content-end" aria-label="...">
+
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= render 'dashboard/partials_shared/footer' %>
+
+  </div>
+
+
+</div>

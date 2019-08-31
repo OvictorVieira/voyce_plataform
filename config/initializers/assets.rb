@@ -18,5 +18,5 @@ scss = Dir["#{style_prefix}**/*.scss"].map { |x| x.gsub(style_prefix, '') }
 Rails.application.config.assets.precompile = (javascripts + css + scss)
 
 # Precompile additional assets.
-# application.js, application.css, and all non-JS/CSS in the app/assets
+# application.js, application.scss, and all non-JS/CSS in the app/assets
 # folder are already added.
