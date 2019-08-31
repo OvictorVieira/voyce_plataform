@@ -12,7 +12,7 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'firebase', '~> 0.2.8'
+gem 'google-cloud-firestore'
 gem 'httparty', '~> 0.17.0'
 
 group :development, :test do

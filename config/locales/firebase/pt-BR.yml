@@ -1,5 +1,5 @@
 pt-BR:
   firebase:
-    errors:
-      login:
+    firestore:
+      errors:
         firebase_comunication_error: 'Ocorreu um erro inesperado, tente novamente'
