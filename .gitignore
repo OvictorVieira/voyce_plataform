@@ -26,3 +26,4 @@ yarn.lock
 /vendor
 /.idea/
 /firestore_data
+/config/voyce-5e1c3-firebase-adminsdk.json

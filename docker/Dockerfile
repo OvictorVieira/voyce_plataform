@@ -28,7 +28,7 @@ RUN set -eux; \
 		bison \
 		dpkg-dev \
 		libgdbm-dev \
-		ruby \		
+		ruby \
 	; \
 	rm -rf /var/lib/apt/lists/*; \
 	\
@@ -85,7 +85,7 @@ RUN set -eux; \
 # install things globally, for great justice
 # and don't create ".bundle" in all our apps
 RUN gem install bundle rails
-RUN apt-get update && apt-get install iputils-ping
+RUN apt-get update && apt-get install -y iputils-ping nano
 ENV GEM_HOME /usr/local/bundle
 ENV BUNDLE_PATH="$GEM_HOME" \
 	BUNDLE_SILENCE_ROOT_WARNING=1 \

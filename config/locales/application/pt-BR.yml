@@ -1,4 +1,10 @@
 pt-BR:
   application:
-    app_name: 'Voyce'
+    labels:
+      app_name: 'Voyce'
+    messages:
+      success: 'Sucesso!'
+      danger: 'Erro!'
+      warning: 'Atenção!'
+
 

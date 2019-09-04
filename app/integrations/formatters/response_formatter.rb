@@ -1,17 +1,17 @@
 module Formatters
-  class ResponseFormatter
+  module ResponseFormatter
 
     attr_accessor :response
 
-    def success(status, args)
+    def success(**args)
       {
-          success: status
+        success: true
       }.merge! args
     end
 
-    def fail(status, args)
+    def fail(**args)
       {
-          success: status
+        success: false
       }.merge! args
     end
   end
