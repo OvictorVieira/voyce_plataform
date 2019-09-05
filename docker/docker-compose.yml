@@ -1,33 +1,15 @@
 version: '3'
 services:
-  firestore-emulator:
-    container_name: firestore_emulator
-    image: perrystallings/cloud-firestore-emulator
-    volumes:
-      - ../firestore_data:/opt/data
-    environment:
-      - FIRESTORE_PROJECT_ID=project_voyce
-  redis:
-    image: redis
-    container_name: redis
-    ports:
-      - "6379:6379"
-    expose:
-      - "6379"
   web:
     tty: true
     stdin_open: true
     build: ./
-    container_name: web_application
+    container_name: application
     privileged: true
     environment:
-      - FIRESTORE_EMULATOR_HOST=firestore_emulator:8080
-      - FIRESTORE_PROJECT_ID=project_voyce
+      - GOOGLE_APPLICATION_CREDENTIALS=/var/www/html/voyce/config/voyce-adminsdk.json
     volumes:
       - ../:/var/www/html/voyce
     ports:
       - "3000:3000"
       - "80:80"
-    depends_on:
-      - redis
-      - firestore-emulator

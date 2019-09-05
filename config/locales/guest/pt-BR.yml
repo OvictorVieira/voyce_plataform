@@ -1,0 +1,17 @@
+pt-BR:
+  guest:
+    cummon:
+      titles:
+
+      fields:
+
+    login:
+      titles:
+        login_card_title: 'Acesse o seu Voyce'
+      fields:
+        like_app_message: 'Curtiu? Baixa nosso app e cria uma conta'
+        email: 'E-mail'
+        password: 'Senha'
+      buttons:
+        login: 'Entrar'
+        forgot_password: 'Vish, esqueceu sua senha?'

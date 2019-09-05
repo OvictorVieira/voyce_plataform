@@ -4,16 +4,16 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0 text-uppercase text-muted">
-          <h3 class="mb-0">Músicas recentes</h3>
+          <h3 class="mb-0"><%= I18n.t('dashboard.music.titles.recent_musics') %></h3>
         </div>
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th scope="col" class="pl-6">Música</th>
-                <th scope="col">Status</th>
-                <th scope="col" class="text-center">Ouvintes</th>
-                <th scope="col" class="text-right pr-4">Edição</th>
+                <th scope="col" class="pl-6"><%= I18n.t('dashboard.music.fields.music_name') %></th>
+                <th scope="col"><%= I18n.t('dashboard.music.fields.status') %></th>
+                <th scope="col" class="text-center"><%= I18n.t('dashboard.music.fields.listeners') %></th>
+                <th scope="col" class="text-right pr-4"><%= I18n.t('dashboard.music.fields.edit') %></th>
               </tr>
             </thead>
             <tbody>
@@ -46,9 +46,8 @@
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="#"><%= I18n.t('dashboard.music.buttons.edit') %></a>
+                      <a class="dropdown-item" href="#"><%= I18n.t('dashboard.music.buttons.exclude') %></a>
                     </div>
                   </div>
                 </td>

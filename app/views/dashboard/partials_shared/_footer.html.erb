@@ -3,16 +3,16 @@
     <div class="row align-items-center justify-content-xl-between">
       <div class="col-xl-6">
         <div class="copyright text-center text-xl-left text-muted">
-          &copy; 2019 Voyce
+          &copy; <%= "#{Time.now.year} #{I18n.t('application.labels.app_name')}" %>
         </div>
       </div>
       <div class="col-xl-6">
         <ul class="nav nav-footer justify-content-center justify-content-xl-end">
           <li class="nav-item">
-            <a href="#" class="nav-link" target="_blank">Sobre nós</a>
+            <a href="#" class="nav-link" target="_blank"><%= I18n.t('application.labels.about_us') %></a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link" target="_blank">Política de Privacidade</a>
+            <a href="#" class="nav-link" target="_blank"><%= I18n.t('application.labels.privacy_policy') %></a>
           </li>
         </ul>
       </div>

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
-  <div class="container px-4">
+  <div class="container px-4 mb-4">
     <a class="navbar-brand" href="<%= root_path %>">
       <img src="" alt="Marca"/>
     </a>
@@ -30,9 +30,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="<%= guest_login_path %>">
-            <i class="ni ni-key-25"></i>
-            <span class="nav-link-inner--text">Entrar</span>
+          <a class="btn btn-primary mx-5 my-2" href="<%= guest_auth_login_path %>">
+            <%= I18n.t('guest.login.buttons.login') %>
           </a>
         </li>
       </ul>

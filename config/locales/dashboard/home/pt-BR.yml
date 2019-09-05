@@ -1,0 +1,25 @@
+pt-BR:
+  dashboard:
+    home:
+      titles:
+        welcome: 'Bem vindo %{user_name}'
+        make_yourself_at_home: 'Sinta-se em casa!'
+      fields:
+        followers: 'Seguidores'
+        sponsorings: 'Patrocinadores'
+        listeners: 'Ouvintes'
+        goal_of: 'de'
+        goal: 'Meta'
+        total: 'No Total'
+        per_month: 'Mensal'
+      placeholders:
+        user_image: 'Imagem de perfil do %{user_name}'
+        voyce_logo: 'Voyce Streaming e Patrocinio coletivo online'
+
+      buttons:
+        profile: 'Perfil'
+        logout: 'Sair'
+        home_page: 'Início'
+        upload_music: 'Fazer upload de Música'
+        proposals: 'Planos'
+        goals: 'Meta'

@@ -1,4 +1,12 @@
 pt-BR:
   application:
-    app_name: 'Voyce'
+    labels:
+      app_name: 'Voyce'
+      about_us: 'Sobre nós'
+      privacy_policy: 'Política de Privacidade'
+    messages:
+      success: 'Sucesso!'
+      danger: 'Erro!'
+      warning: 'Atenção!'
+
 

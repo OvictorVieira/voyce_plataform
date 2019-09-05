@@ -1,5 +1,7 @@
 pt-BR:
   firebase:
-    errors:
-      login:
-        firebase_comunication_error: 'Ocorreu um erro inesperado, tente novamente'
+    firestore:
+      errors:
+        firebase_comunication_error: 'Ocorreu um erro inesperado, tente novamente.'
+        signup_error: 'E-mail ou senha inválidos. Tente novamente.'
+        disabled_user: 'O seu usuário está desativado, contate nossa equipe para reativa-lo'
