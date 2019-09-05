@@ -1,0 +1,13 @@
+pt-BR:
+  dashboard:
+    music:
+      titles:
+        recent_musics: 'Músicas recentes'
+      fields:
+        music_name: 'Música'
+        status: 'Status'
+        listeners: 'Ouvintes'
+        edit: 'Edição'
+      buttons:
+        edit: 'Editar'
+        exclude: 'Excluir'

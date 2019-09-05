@@ -2,6 +2,8 @@ pt-BR:
   application:
     labels:
       app_name: 'Voyce'
+      about_us: 'Sobre nós'
+      privacy_policy: 'Política de Privacidade'
     messages:
       success: 'Sucesso!'
       danger: 'Erro!'

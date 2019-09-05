@@ -1,0 +1,7 @@
+pt-BR:
+  dashboard:
+    statuses:
+      pending: 'Pendente'
+      in_analyse: 'Em análise'
+      active: 'Ativo'
+      inactive: 'Inativo'

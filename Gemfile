@@ -12,8 +12,9 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'google-cloud-firestore'
 gem 'httparty', '~> 0.17.0'
+gem 'google-cloud-firestore'
+gem 'google-cloud-storage'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

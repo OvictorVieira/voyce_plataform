@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   namespace :dashboard do
-    get '/home', to: 'home#index'
+    get '/', to: 'home#index'
   end
 
 end
