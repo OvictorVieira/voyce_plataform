@@ -7,7 +7,7 @@ services:
     container_name: application
     privileged: true
     environment:
-      - GOOGLE_APPLICATION_CREDENTIALS=/var/www/html/voyce/config/voyce-5e1c3-firebase-adminsdk.json
+      - GOOGLE_APPLICATION_CREDENTIALS=/var/www/html/voyce/config/voyce-adminsdk.json
     volumes:
       - ../:/var/www/html/voyce
     ports:
