@@ -1,0 +1,5 @@
+pt-BR:
+  dashboard:
+    users:
+      errors:
+        update: 'A atualização dos dados falhou, por favor tente novamente.'

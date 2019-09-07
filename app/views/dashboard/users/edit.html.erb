@@ -4,132 +4,18 @@
 
   <%= render 'dashboard/partials_shared/navbar' %>
 
-  <%= render 'dashboard/partials_shared/header', locals: {description: 'Aqui você poderá editar as informações do seu perfil, tanto como e-mail e/ou senha.',
-                                                          title: 'Perfil do Usuário',
-                                                          css_class: 'col-lg-7'} %>
+  <%= render 'dashboard/partials_shared/header', locals: {
+      description: @description = 'Aqui você poderá editar as informações do seu perfil, tanto como e-mail e/ou senha.',
+      title: @title = 'Perfil do Usuário',
+      css_class: @css_class = 'col-lg-7',
+      action: @action = dashboard_user_update_url
+  } %>
 
-  <div class="container-fluid mt--7">
-    <div class="row">
-      <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
-        <div class="card card-profile shadow">
-          <div class="row justify-content-center">
-            <div class="col-lg-3 order-lg-2">
-              <div class="card-profile-image">
-                <img src="/img/theme/team-4-800x800.jpg" class="rounded-circle">
-              </div>
-            </div>
-          </div>
-          <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4"></div>
-          <div class="card-body pt-0 pt-md-4">
-            <div class="row">
-              <div class="col">
-                <div class="card-profile-stats d-flex justify-content-center mt-md-5">
-                  <div>
-                    <span class="heading">22</span>
-                    <span class="description">Seguidores</span>
-                  </div>
-                  <div>
-                    <span class="heading">10</span>
-                    <span class="description">Patrocinadores</span>
-                  </div>
-                  <div>
-                    <span class="heading">89</span>
-                    <span class="description">Ouvintes</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="text-center">
-              <h3>
-                {{ auth()->user()->name }}<span class="font-weight-light">, 27</span>
-              </h3>
-              <div class="h5 font-weight-300">
-                <i class="ni location_pin mr-2"></i>Bucharest, Romania
-              </div>
-              <div class="h5 mt-4">
-                <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
-              </div>
-              <div>
-                <i class="ni education_hat mr-2"></i>University of Computer Science
-              </div>
-              <hr class="my-4" />
-              <p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p>
-              <a href="#">Show more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-8 order-xl-1">
-        <div class="card bg-secondary shadow">
-          <div class="card-header bg-white border-0">
-            <div class="row align-items-center">
-              <h3 class="mb-0">Editar Perfil</h3>
-            </div>
-          </div>
-          <div class="card-body">
-            <form method="post" action="{{ route('profile.update" autocomplete="off">
+  <%= render 'dashboard/users/form_edit', locals: {
+      action: @action = '',
+      button_name: @button_name = I18n.t('dashboard.common.buttons.save')
+  } %>
 
-              <h6 class="heading-small text-muted mb-4">Informações do Usuário</h6>
-
-              <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-
-              <div class="pl-lg-4">
-                <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                  <label class="form-control-label" for="input-name">Nome completo</label>
-                  <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Name" value="{{ old('name', auth()->user()->name) }}" required autofocus>
-                </div>
-                <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                  <label class="form-control-label" for="input-email">E-mail</label>
-                  <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email" value="{{ old('email', auth()->user()->email) }}" required>
-                </div>
-
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary mt-4 w-50">Salvar</button>
-                </div>
-              </div>
-            </form>
-            <hr class="my-4" />
-            <form method="post" action="{{ route('profile.password" autocomplete="off">
-
-              <h6 class="heading-small text-muted mb-4">Senha</h6>
-
-              <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-
-              <div class="pl-lg-4">
-                <div class="form-group{{ $errors->has('old_password') ? ' has-danger' : '' }}">
-                  <label class="form-control-label" for="input-current-password">Senha atual</label>
-                  <input type="password" name="old_password" id="input-current-password" class="form-control form-control-alternative{{ $errors->has('old_password') ? ' is-invalid' : '' }}" placeholder="Senha atual" value="" required>
-                </div>
-                <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                  <label class="form-control-label" for="input-password">Nova senha</label>
-                  <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Nova senha" value="" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-control-label" for="input-password-confirmation">Confirme sua nova senha</label>
-                  <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="Confirme sua nova senha" value="" required>
-                </div>
-
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary mt-4 w-50">Quero alterar minha senha</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <%= render 'dashboard/partials_shared/footer' %>
-
-  </div>
+  <%= render 'dashboard/partials_shared/footer' %>
 
 </div>

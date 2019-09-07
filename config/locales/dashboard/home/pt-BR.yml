@@ -1,11 +1,63 @@
 pt-BR:
   dashboard:
+    common:
+      buttons:
+        save: 'Salvar'
+    user_to_artist:
+      title: 'Olá %{user_name}'
+      description: 'Aqui você poderá editar as informações do seu perfil
+                    para se tornar um Artista e começar a usufruir dos beneficios
+                    de ser um Voycer.'
+      social_media_modal: 'Redes Sociais'
+      social_media_modal_description: 'Adicione o link de sua rede social Facebook, Instagram e Twitter
+                                       nos campos ao lado para que sejam exibidas em seu perfil no aplicativo Voyce.'
+      my_account: 'Minha conta'
+      user_informations: 'Informações do usuário'
+      buttons:
+        turn_artist: 'Virar Artista'
+        modal_button_ok: 'Beleza!'
+        gender: 'Gênero'
+        select_one_option: 'Opções'
+        male: 'Masculino'
+        female: 'Feminino'
+        prefer_not_to_say: 'Prefiro não dizer'
+      fields:
+        contact: 'Contato'
+        user_name: 'Nome de usuário'
+        user_name_description: 'Nome artistico que será exibido no aplicativo'
+        complete_name: 'Nome completo'
+        email: 'E-mail'
+        gender: 'Gênero'
+        city: 'Cidade'
+        state: 'Estado'
+        phone_number: 'Telefone (Celular)'
+        contact_information: 'Informações de contato'
+        social_media: 'Redes sociais'
+        cep: 'CEP'
+        address: 'Avenida saudade'
+        address_numer: '2045'
+        biography: 'Biografia'
+        about_me: 'Sobre mim'
+        facebook: 'Facebook'
+        instagram: 'Instagram'
+        twitter: 'Twitter'
+      placeholder:
+        user_name: 'Ex.: Jesse Miller'
+        complete_name: 'Ex.: Jesse Malver Miller'
+        user_email: 'Ex.: jesse.miller@gmail.com'
+        phone_number: 'Ex.: (00)0 0000-0000'
+        cep: 'Ex.: 00000-000'
+        city: 'Ex.: Marília'
+        state: 'Ex.: Sp'
+        about_me: 'A biografia é exibida no seu perfil de artista...'
+        social_media_link: 'Link da sua rede social'
     home:
       titles:
         welcome: 'Bem vindo %{user_name}'
         make_yourself_at_home: 'Sinta-se em casa!'
       fields:
         followers: 'Seguidores'
+        following: 'Seguindo'
         sponsorings: 'Patrocinadores'
         listeners: 'Ouvintes'
         goal_of: 'de'
@@ -15,7 +67,6 @@ pt-BR:
       placeholders:
         user_image: 'Imagem de perfil do %{user_name}'
         voyce_logo: 'Voyce Streaming e Patrocinio coletivo online'
-
       buttons:
         profile: 'Perfil'
         logout: 'Sair'
