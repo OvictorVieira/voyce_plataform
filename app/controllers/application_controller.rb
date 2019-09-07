@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
     session[:user_id] = firebase_user_id
   end
 
+  def is_logged?
+    current_user.present?
+  end
+
   private
 
   def current_user

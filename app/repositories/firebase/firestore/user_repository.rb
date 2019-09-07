@@ -29,6 +29,10 @@ module Firebase
         args.merge!(type: ARTIST_TYPE)
         firestore_user.update_user(args, user_id)
       end
+
+      def update_user_data(args, user_id)
+        firestore_user.update_user(args, user_id)
+      end
     end
   end
 end

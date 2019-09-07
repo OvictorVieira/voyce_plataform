@@ -10,11 +10,10 @@ Rails.application.routes.draw do
   namespace :dashboard do
     get '/', to: 'home#index'
 
-    post '/convert_user', to: 'home#convert_user_to_artist', as: 'convert_user_to_artist'
-
     # users
     get '/user/edit', to: 'users#edit', as: 'user_edit'
     post '/user/update', to: 'users#update', as: 'user_update'
+    post '/user/become_artist', to: 'users#convert_user_to_artist', as: 'convert_user_to_artist'
   end
 
 end
