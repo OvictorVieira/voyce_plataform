@@ -54,28 +54,30 @@
                 </div>
             </div>
             <!-- Navigation -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="<%= dashboard_url %>">
-                        <i class="fas fa-home text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.home_page') %>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-upload text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.upload_music') %>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-hand-holding-usd text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.proposals') %>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-chart-line text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.goals') %>
-                    </a>
-                </li>
-            </ul>
+            <% unless is_only_listener? %>
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="<%= dashboard_url %>">
+                          <i class="fas fa-home text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.home_page') %>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">
+                          <i class="fas fa-upload text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.upload_music') %>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">
+                          <i class="fas fa-hand-holding-usd text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.proposals') %>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">
+                          <i class="fas fa-chart-line text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.goals') %>
+                      </a>
+                  </li>
+              </ul>
+            <% end %>
         </div>
     </div>
 </nav>

@@ -1,5 +1,7 @@
 pt-BR:
   application:
+    app_title:
+      title: 'Voyce - Patrocínio coletivo e streaming de audio'
     labels:
       app_name: 'Voyce'
       about_us: 'Sobre nós'

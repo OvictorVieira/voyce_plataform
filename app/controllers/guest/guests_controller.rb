@@ -9,8 +9,8 @@ class Guest::GuestsController < ApplicationController
   def access_account
     begin
       allowed_parameters = filter_params
-      user_service = Firebase::Firestore::UserService.new
-      firebase_user = user_service.access_account(allowed_parameters)
+      user_service = Firebase::Firestore::UserService.new(allowed_parameters)
+      firebase_user = user_service.access_account
       user_session(firebase_user['localId'])
       current_user
 
