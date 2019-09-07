@@ -1,5 +1,9 @@
 pt-BR:
   dashboard:
     users:
-      errors:
-        update: 'A atualização dos dados falhou, por favor tente novamente.'
+      messages:
+        success:
+          welcome_artist: 'Seja bem vindo %{user_name}, desfrute dos benefícios de ser um Voycer.'
+          update_success: 'Dados atualizados com sucesso!'
+        errors:
+          update: 'A atualização dos dados falhou, por favor tente novamente.'

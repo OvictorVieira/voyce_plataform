@@ -22,6 +22,10 @@ module ApplicationHelper
     messages.html_safe
   end
 
+  def is_only_listener?
+    current_user[:type] == Firebase::Firestore::UserRepository::LISTENER_TYPE
+  end
+
   def select_background_header
     "team-#{rand(0..13)}.jpg"
   end

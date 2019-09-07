@@ -7,13 +7,12 @@
   <%= render 'dashboard/partials_shared/header', locals: {
       description: @description = 'Aqui você poderá editar as informações do seu perfil, tanto como e-mail e/ou senha.',
       title: @title = 'Perfil do Usuário',
-      css_class: @css_class = 'col-lg-7',
-      action: @action = dashboard_user_update_url
+      css_class: @css_class = 'col-lg-8 col-8'
   } %>
 
   <%= render 'dashboard/users/form_edit', locals: {
-      action: @action = '',
-      button_name: @button_name = I18n.t('dashboard.common.buttons.save')
+      button_name: @button_name = I18n.t('dashboard.common.buttons.save'),
+      action: @action = dashboard_user_update_path,
   } %>
 
   <%= render 'dashboard/partials_shared/footer' %>

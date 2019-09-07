@@ -1,5 +1,6 @@
 class Guest::GuestsController < ApplicationController
 
+  before_action :redirect_to_dashboard, only: :index
   skip_before_action :authenticate_user!, only: [:index, :access_account]
 
   def index
@@ -29,5 +30,9 @@ class Guest::GuestsController < ApplicationController
 
   def render_login_page
     render 'guests/index'
+  end
+
+  def redirect_to_dashboard
+    redirect_to dashboard_url if is_logged?
   end
 end
