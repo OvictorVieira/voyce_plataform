@@ -12,7 +12,9 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0"><%= I18n.t('dashboard.home.fields.followers') %></h5>
-                  <span class="h2 font-weight-bold mb-0">25</span>
+                  <span class="h2 font-weight-bold mb-0">
+                    <%= quantity_followers %>
+                  </span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -21,7 +23,6 @@
                 </div>
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
-                <!--<span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>-->
                 <span class="text-nowrap"><%= I18n.t('dashboard.home.fields.total') %></span>
               </p>
             </div>
@@ -33,7 +34,9 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0"><%= I18n.t('dashboard.home.fields.sponsorings') %></h5>
-                  <span class="h2 font-weight-bold mb-0">8</span>
+                  <span class="h2 font-weight-bold mb-0">
+                    <%= quantity_sponsoring %>
+                  </span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -42,7 +45,6 @@
                 </div>
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
-                <!--<span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>-->
                 <span class="text-nowrap"><%= I18n.t('dashboard.home.fields.total') %></span>
               </p>
             </div>
@@ -54,7 +56,9 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0"><%= I18n.t('dashboard.home.fields.listeners') %></h5>
-                  <span class="h2 font-weight-bold mb-0">40</span>
+                  <span class="h2 font-weight-bold mb-0">
+                    <%= quantity_listeners %>
+                  </span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -63,7 +67,6 @@
                 </div>
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
-                <!--<span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>-->
                 <span class="text-nowrap"><%= I18n.t('dashboard.home.fields.per_month') %></span>
               </p>
             </div>
@@ -75,7 +78,9 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0"><%= I18n.t('dashboard.home.fields.goal') %></h5>
-                  <span class="h2 font-weight-bold mb-0">R$ 1000,00</span>
+                  <span class="h2 font-weight-bold mb-0">
+                     <%= goal_current_value %>
+                  </span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-success text-white rounded-circle shadow">
@@ -85,7 +90,9 @@
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
                 <span class="text-nowrap"><%= I18n.t('dashboard.home.fields.goal_of') %></span>
-                <span class="text-success mr-2"> R$ 1200,00</span>
+                <span class="text-success mr-2">
+                  <%= goal_value %>
+                </span>
               </p>
             </div>
           </div>

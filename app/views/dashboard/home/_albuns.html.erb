@@ -1,0 +1,45 @@
+<tbody id="tbody-albuns" class="d-none">
+
+  <%= albuns.get do |music| %>
+
+    <tr>
+      <th scope="row">
+        <div class="media align-items-center">
+            <span class="badge badge-dot mx-3">
+              <i class="fas fa-music"></i>
+            </span>
+          <div class="media-body">
+              <span class="mb-0 text-sm">
+                <%= music.data[:title] %>
+              </span>
+          </div>
+        </div>
+      </th>
+      <td>
+          <span class="badge badge-dot mr-4">
+            <i class="bg-warning text-sm"></i>&nbsp;<%= load_music_status(music.data[:status]) %>
+          </span>
+      </td>
+      <td>
+        <div class="media align-items-center">
+          <div class="media-body text-center">
+              <span class="mb-0 text-sm">
+                <%= music.data[:message] %>
+              </span>
+          </div>
+        </div>
+      </td>
+      <td class="text-right">
+        <div class="dropdown">
+          <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-ellipsis-v"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+            <a class="dropdown-item" href="#"><%= I18n.t('dashboard.music.buttons.edit') %></a>
+            <a class="dropdown-item" href="#"><%= I18n.t('dashboard.music.buttons.exclude') %></a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
