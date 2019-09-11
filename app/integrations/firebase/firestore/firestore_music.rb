@@ -28,11 +28,11 @@ module Firebase
       private
 
       def get_singles(user_songs)
-        user_songs.col(SINGLES_COLLECTION_TYPE)
+        user_songs.col(SINGLES_COLLECTION_TYPE).get
       end
 
       def get_albuns(user_songs)
-        user_songs.col(ALBUNS_COLLECTION_TYPE)
+        user_songs.col(ALBUNS_COLLECTION_TYPE).get
       end
 
       def singles_and_albuns(singles, albuns)

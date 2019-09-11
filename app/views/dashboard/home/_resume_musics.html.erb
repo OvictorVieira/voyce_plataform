@@ -26,10 +26,10 @@
                 <th scope="col" class="text-center"><%= I18n.t('dashboard.music.fields.message') %></th>
               </tr>
             </thead>
-            <% if @singles_and_albuns.present? %>
-              <%= render partial: 'singles', locals: { singles: @singles_and_albuns[:singles].get } %>
+            <% if @singles.present? || @albuns.present? %>
+              <%= render partial: 'singles', locals: { singles: @singles } %>
 
-              <%#= render partial: 'albuns', locals: { albuns: @singles_and_albuns[:albuns] } %>
+              <%#= render partial: 'albuns', locals: { albuns: @albuns } %>
             <% else %>
               <tbody>
                 <tr>

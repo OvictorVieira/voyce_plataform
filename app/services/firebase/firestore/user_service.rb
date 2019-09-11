@@ -6,7 +6,7 @@ module Firebase
 
       def initialize(args)
         @data = args
-        @user_repository = Firebase::Firestore::UserRepository.new
+        @user_repository = UserRepository.new
       end
 
       def access_account

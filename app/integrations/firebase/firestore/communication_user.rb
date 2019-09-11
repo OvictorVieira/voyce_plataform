@@ -7,7 +7,7 @@ module Firebase
       attr_accessor :communicator
 
       def initialize
-        @communicator = Firebase::Firestore::Communication.new(LOGIN_END_POINT)
+        @communicator = Communication.new(LOGIN_END_POINT)
       end
 
       def login_on_firebase(email, password)

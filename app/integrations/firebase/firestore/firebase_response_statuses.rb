@@ -7,9 +7,9 @@ module Firebase
       USER_DISABLED_STATUS = 'USER_DISABLED'.freeze
 
       FIREBASE_ERROR_STATUSES = {
-        EMAIL_NOT_FOUND_STATUS => Firebase::Firestore::SingUpError,
-        INVALID_PASSWORD_STATUS => Firebase::Firestore::SingUpError,
-        USER_DISABLED_STATUS => Firebase::Firestore::UserDisabledError
+        EMAIL_NOT_FOUND_STATUS => SingUpError,
+        INVALID_PASSWORD_STATUS => SingUpError,
+        USER_DISABLED_STATUS => UserDisabledError
       }
     end
   end
