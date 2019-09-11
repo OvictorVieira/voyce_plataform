@@ -8,6 +8,20 @@ pt-BR:
         status: 'Status'
         listeners: 'Ouvintes'
         edit: 'Edição'
+        no_music: 'Nenhuma música encontrada'
+        message: 'Mensagem'
       buttons:
         edit: 'Editar'
         exclude: 'Excluir'
+        singles: 'Singles'
+        albuns: 'Álbuns'
+      statuses:
+        pending_review: 'Pendente de análise'
+        in_review: 'Em análise'
+        approved: 'Aprovado'
+        disapproved: 'Reprovado'
+      status_messages:
+        pending_review_message: 'Pendente! Aguardando aprovação da equipe Voyce.'
+        in_review_message: 'Estamos revisando! Música sendo analisada pela nossa equipe.'
+        approved_message: 'Aprovada! Música disponível no seu perfil Voyce.'
+        disapproved_message: 'Reprovado! Motivo: %{message}'

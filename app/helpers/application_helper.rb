@@ -22,6 +22,10 @@ module ApplicationHelper
     messages.html_safe
   end
 
+  def number_to_currency_br(number)
+    number_to_currency(number, :unit => "R$ ", :separator => ",", :delimiter => ".")
+  end
+
   def is_only_listener?
     current_user[:type] == Firebase::Firestore::UserRepository::LISTENER_TYPE
   end

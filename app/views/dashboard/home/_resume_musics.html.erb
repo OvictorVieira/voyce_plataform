@@ -3,8 +3,19 @@
   <div class="row">
     <div class="col">
       <div class="card shadow">
-        <div class="card-header border-0 text-uppercase text-muted">
+        <div class="card-header border-0 text-uppercase text-muted d-flex justify-content-between">
           <h3 class="mb-0"><%= I18n.t('dashboard.music.titles.recent_musics') %></h3>
+
+          <div class="btn-group btn-group-toggle w-25" data-toggle="buttons">
+<!--            <label class="btn btn-secondary active">-->
+<!--              <input type="radio" name="singles" id="singles" autocomplete="off" checked>-->
+<!--              &nbsp;<%#= I18n.t('dashboard.music.buttons.singles') %>-->
+<!--            </label>-->
+<!--            <label class="btn btn-secondary">-->
+<!--              <input type="radio" name="albuns" id="albuns" autocomplete="off">-->
+<!--              &nbsp;<%#= I18n.t('dashboard.music.buttons.albuns') %>-->
+<!--            </label>-->
+          </div>
         </div>
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
@@ -12,47 +23,28 @@
               <tr>
                 <th scope="col" class="pl-6"><%= I18n.t('dashboard.music.fields.music_name') %></th>
                 <th scope="col"><%= I18n.t('dashboard.music.fields.status') %></th>
-                <th scope="col" class="text-center"><%= I18n.t('dashboard.music.fields.listeners') %></th>
-                <th scope="col" class="text-right pr-4"><%= I18n.t('dashboard.music.fields.edit') %></th>
+                <th scope="col" class="text-center"><%= I18n.t('dashboard.music.fields.message') %></th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <span class="badge badge-dot mx-3">
-                      <i class="fas fa-music"></i>
-                    </span>
-                    <div class="media-body">
-                      <span class="mb-0 text-sm">Same Old War</span>
+            <% if @singles_and_albuns.present? %>
+              <%= render partial: 'singles', locals: { singles: @singles_and_albuns[:singles].get } %>
+
+              <%#= render partial: 'albuns', locals: { albuns: @singles_and_albuns[:albuns] } %>
+            <% else %>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <div class="media align-items-center mt-3">
+                      <div class="media-body">
+                        <span class="mb-0 text-sm">
+                          <%= I18n.t('dashboard.music.fields.no_music') %>
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </th>
-                <td>
-                  <span class="badge badge-dot mr-4">
-                    <i class="bg-warning text-sm"></i> Pendente
-                  </span>
-                </td>
-                <td>
-                  <div class="media align-items-center">
-                    <div class="media-body text-center">
-                      <span class="mb-0 text-sm">14</span>
-                    </div>
-                  </div>
-                </td>
-                <td class="text-right">
-                  <div class="dropdown">
-                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                      <a class="dropdown-item" href="#"><%= I18n.t('dashboard.music.buttons.edit') %></a>
-                      <a class="dropdown-item" href="#"><%= I18n.t('dashboard.music.buttons.exclude') %></a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
+                  </th>
+                </tr>
+              </tbody>
+            <% end %>
           </table>
         </div>
 

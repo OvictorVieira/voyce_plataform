@@ -7,3 +7,4 @@ pt-BR:
           update_success: 'Dados atualizados com sucesso!'
         errors:
           update: 'A atualização dos dados falhou, por favor tente novamente.'
+          get_musics: 'Falha ao buscar suas músicas, tente novamente.'
