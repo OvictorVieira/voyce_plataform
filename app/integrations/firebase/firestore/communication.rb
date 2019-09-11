@@ -4,7 +4,7 @@ module Firebase
 
       include HTTParty
       include Formatters::ResponseFormatter
-      include Firebase::Firestore::FirebaseResponseStatuses
+      include FirebaseResponseStatuses
 
       URL_BASE = 'https://identitytoolkit.googleapis.com/v1/accounts:'.freeze
       API_KEY_PARAM = '?key='.freeze

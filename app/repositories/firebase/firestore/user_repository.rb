@@ -17,8 +17,8 @@ module Firebase
       attr_accessor :firebase_communicator_user, :firestore_user
 
       def initialize
-        @firestore_user = Firebase::Firestore::FirestoreUser.new
-        @firebase_communicator_user = Firebase::Firestore::CommunicationUser.new
+        @firestore_user = FirestoreUser.new
+        @firebase_communicator_user = CommunicationUser.new
       end
 
       def access_account(email, password)

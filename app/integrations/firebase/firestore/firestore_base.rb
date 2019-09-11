@@ -16,7 +16,7 @@ module Firebase
         begin
           Google::Cloud::Firestore.new(project_id: load_project_id)
         rescue
-          Firebase::Firestore::CommunicationHandler
+          CommunicationHandler
         end
       end
 

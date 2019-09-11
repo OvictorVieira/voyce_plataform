@@ -9,7 +9,7 @@ module Firebase
       attr_reader :firestore_base
 
       def initialize
-        @firestore_base = Firebase::Firestore::FirestoreBase.new.firestore
+        @firestore_base = FirestoreBase.new.firestore
       end
 
       def load_user(user_id)
@@ -21,7 +21,7 @@ module Firebase
         response = user_firestore.update(args)
         return success if response.update_time.present?
 
-        fail(message: Firebase::Firestore::UserUpdateError)
+        fail(message: UserUpdateError)
       end
 
       private
