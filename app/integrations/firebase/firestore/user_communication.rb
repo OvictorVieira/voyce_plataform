@@ -1,6 +1,6 @@
 module Firebase
   module Firestore
-    class CommunicationUser
+    class UserCommunication
 
       LOGIN_END_POINT = 'signInWithPassword'.freeze
 

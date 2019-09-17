@@ -1,6 +1,6 @@
 module Firebase
   module Firestore
-    class FirestoreMusic
+    class MusicFirestore
 
       include Formatters::ResponseFormatter
 

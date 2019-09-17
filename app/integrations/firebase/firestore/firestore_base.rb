@@ -13,11 +13,7 @@ module Firebase
       protected
 
       def create_firestore_connection
-        begin
-          Google::Cloud::Firestore.new(project_id: load_project_id)
-        rescue
-          CommunicationHandler
-        end
+        Google::Cloud::Firestore.new(project_id: load_project_id)
       end
 
       def load_project_id
