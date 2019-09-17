@@ -1,0 +1,38 @@
+pt-BR:
+  dashboard:
+    proposals:
+      titles:
+        proposals: 'Planos'
+        proposals_create: 'Planos de Patrocínio'
+      fields:
+        proposal: 'Plano'
+        price: 'Preço'
+        sponsors: 'Nº Assinantes'
+        status: 'Status'
+        edit: 'Edições'
+        no_proposals: 'Nenhum plano encontrado'
+        proposals_informations: 'Informações sobre o plano'
+        proposal_name: 'Nome do Plano'
+        required: 'Obrigatório'
+        description: 'Descrição'
+        tip: 'Ao definir o preço do seu plano, não se esqueça de valorizar o tempo e a
+              energia que você estará dedicando aos seus patrocinadores.
+              Se você tiver apenas um plano, não tenha medo de cobrar preços mais altos
+              (R$ 50,00 ou até mesmo R$ 100,00, por exemplo).
+              Se você tiver mais de um plano, certifique-se de cobrir preços altos
+              e baixos (R$ 5,00 a R$ 40,00).'
+      statuses:
+        active: 'Ativo'
+        inactive: 'Inativo'
+      buttons:
+        create_proposal: 'Criar Plano'
+        edit: 'Editar'
+        inactivate: 'Inativar'
+        back: 'Voltar'
+        create_plan: 'Criar Plano'
+      messages:
+        confirm_inactivate: 'Você tem certeza que deseja inativar esse Plano?'
+        success_on_create: 'Seu plano foi criado com sucesso!'
+        success_on_update: 'Seu plano foi atualizado com sucesso!'
+      errors:
+        create_proposal_error: 'Ocorreu erro ao criar plano, tente novamente.'
