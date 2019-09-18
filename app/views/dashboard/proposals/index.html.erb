@@ -38,7 +38,7 @@
                 </tr>
               </thead>
               <tbody>
-                <% if @all_proposals.present? %>
+                <% if @all_proposals.first.present? %>
 
                   <% @all_proposals.each do |proposal| %>
                     <tr>
@@ -50,11 +50,12 @@
                       </td>
                       <td class="text-right">
                         <a class="btn btn-outline-warning w-25" href="<%= dashboard_edit_proposals_path(proposal.document_id) %>">
-                          <%= I18n.t('dashboard.proposals.buttons.edit') %>
+                          <i class="fas fa-edit"></i>
                         </a>
                       </td>
                     </tr>
                   <% end %>
+
                 <% else %>
                   <tr>
                     <th scope="row">

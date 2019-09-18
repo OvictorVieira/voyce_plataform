@@ -15,6 +15,10 @@ module Firebase
         @proposal_firestore = ProposalFirestore.new
       end
 
+      def load_proposal(user_id, proposal_id)
+        proposal_firestore.load_proposal(user_id, proposal_id)
+      end
+
       def load_all_proposals(user_id)
         proposal_firestore.load_all_proposals(user_id)
       end
@@ -23,8 +27,8 @@ module Firebase
         proposal_firestore.process_creation_proposal(user_id, data)
       end
 
-      def edit_proposal(user_id, data)
-        proposal_firestore.process_edit_proposal(user_id, data)
+      def update_proposal(user_id, data)
+        proposal_firestore.process_update_proposal(user_id, data)
       end
     end
   end

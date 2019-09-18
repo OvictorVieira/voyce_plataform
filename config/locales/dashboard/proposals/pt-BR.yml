@@ -4,6 +4,8 @@ pt-BR:
       titles:
         proposals: 'Planos'
         proposals_create: 'Planos de Patrocínio'
+        tip: 'Dica'
+        atention: 'Atenção'
       fields:
         proposal: 'Plano'
         price: 'Preço'
@@ -29,10 +31,15 @@ pt-BR:
         edit: 'Editar'
         inactivate: 'Inativar'
         back: 'Voltar'
-        create_plan: 'Criar Plano'
+        save: 'Salvar'
+        ok: 'Entendi!'
       messages:
         confirm_inactivate: 'Você tem certeza que deseja inativar esse Plano?'
         success_on_create: 'Seu plano foi criado com sucesso!'
         success_on_update: 'Seu plano foi atualizado com sucesso!'
       errors:
         create_proposal_error: 'Ocorreu erro ao criar plano, tente novamente.'
+        update_proposal_error: 'Ocorreu erro ao atualizar seu plano, tente novamente.'
+        get_proposal_error: 'Ocorreu erro ao buscar o plano, tente novamente.'
+        invalid_fields: 'Atenção! Para criar um plano, preencha os campos Nome, Preço e Descrição'
+        invalid_price: 'O valor informado no campo preço é inválido, insira um valor válido!'
