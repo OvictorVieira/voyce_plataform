@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_current_user
-    firestore_user = Firebase::Firestore::FirestoreUser.new
+    firestore_user = Firebase::Firestore::UserFirestore.new
     firestore_user.load_user(session[:user_id])
   end
 

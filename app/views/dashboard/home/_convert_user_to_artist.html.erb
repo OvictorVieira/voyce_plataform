@@ -1,10 +1,10 @@
-<%= render 'dashboard/partials_shared/header', locals: {
-    css_class: @css_class = 'col-lg-7 col-md-10',
-    title: @title = I18n.t('dashboard.user_to_artist.title', user_name: current_user_name),
-    description: @description = I18n.t('dashboard.user_to_artist.description')
+<%= render partial: 'dashboard/partials_shared/header', locals: {
+    css_class: 'col-lg-7 col-md-10',
+    title: I18n.t('dashboard.user_to_artist.title', user_name: current_user_name),
+    description: I18n.t('dashboard.user_to_artist.description')
 } %>
 
-<%= render 'dashboard/users/form_edit', locals: {
-    action: @action = dashboard_convert_user_to_artist_path,
-    button_name: @button_name = I18n.t('dashboard.user_to_artist.buttons.turn_artist')
+<%= render partial: 'dashboard/users/form_edit', locals: {
+    action: dashboard_convert_user_to_artist_path,
+    button_name: I18n.t('dashboard.user_to_artist.buttons.turn_artist')
 } %>

@@ -9,14 +9,14 @@ module Firebase
         I18n.t('dashboard.music.statuses.disapproved')
       ]
 
-      attr_accessor :firestore_music
+      attr_accessor :music_firestore
 
       def initialize
-        @firestore_music = FirestoreMusic.new
+        @music_firestore = MusicFirestore.new
       end
 
       def load_all_songs(user_id)
-        firestore_music.load_all_songs(user_id)
+        music_firestore.load_all_songs(user_id)
       end
     end
   end

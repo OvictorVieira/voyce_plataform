@@ -8,6 +8,7 @@ module ApplicationHelper
 
   SOCIAL_MEDIA = [:facebook_url, :instagram_url, :twitter_url]
   INITIAL_NUMBER = 0
+  INITIAL_GOAL = 'R$ 0,00'.freeze
 
   def flash_message
     messages = ""
@@ -130,4 +131,9 @@ module ApplicationHelper
     current_user[:gender]
   end
 
+  def format_currency_br(value)
+    return number_to_currency_br(value) if value.present?
+
+    INITIAL_GOAL
+  end
 end

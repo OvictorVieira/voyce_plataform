@@ -1,6 +1,6 @@
 module Firebase
   module Firestore
-    class FirestoreUser
+    class UserFirestore
 
       include Formatters::ResponseFormatter
 

@@ -5,8 +5,8 @@
   <%= render 'dashboard/partials_shared/navbar' %>
 
   <%= render partial: 'dashboard/partials_shared/header', locals: {
-      description: 'Faça a edição dos planos já cadastrados.',
-      title: 'Edição de Plano',
+      description: 'Crie os planos e informe o que você vai oferecer aos seus Voycers.',
+      title: 'Criação de Plano',
       css_class: 'col-lg-12 col-12'
   } %>
 
@@ -30,9 +30,8 @@
             </div>
           </div>
           <div class="card-body">
-            <%= form_tag dashboard_update_proposals_url, :id => 'form-action' do %>
 
-              <%= hidden_field_tag :proposal_id, @proposal.document_id %>
+            <%= form_tag dashboard_create_proposals_url, :id => 'form-action' do %>
 
               <h6 class="heading-small text-muted mb-4">
                 <%= I18n.t('dashboard.proposals.fields.proposals_informations') %>
@@ -58,7 +57,6 @@
                              name="proposal_name"
                              id="proposal-name"
                              placeholder="(Ex.: Plano Silver)"
-                             value="<%= @proposal.data[:name] %>"
                              type="text" required>
                     </div>
                   </div>
@@ -83,7 +81,6 @@
                              name="price"
                              id="price"
                              placeholder="5,00"
-                             value="<%= number_to_currency_br(@proposal.data[:price]) %>"
                              type="text" required>
                     </div>
                   </div>
@@ -105,14 +102,14 @@
                                 id="description"
                                 rows="4"
                                 cols="80"
-                                placeholder="Escreva aqui a descrição do seu plano..."><%= @proposal.data[:description] %></textarea>
+                                placeholder="Escreva aqui a descrição do seu plano..."></textarea>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-12 text-right">
                   <button type="submit" class="btn btn-success w-25" id="button-action">
-                    <%= I18n.t('dashboard.proposals.buttons.save') %>
+                    <%= I18n.t('dashboard.proposals.buttons.create_proposal') %>
                   </button>
                 </div>
               </div>

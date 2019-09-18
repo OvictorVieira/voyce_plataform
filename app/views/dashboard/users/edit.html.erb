@@ -4,15 +4,15 @@
 
   <%= render 'dashboard/partials_shared/navbar' %>
 
-  <%= render 'dashboard/partials_shared/header', locals: {
-      description: @description = 'Aqui você poderá editar as informações do seu perfil, tanto como e-mail e/ou senha.',
-      title: @title = 'Perfil do Usuário',
-      css_class: @css_class = 'col-lg-8 col-8'
+  <%= render partial: 'dashboard/partials_shared/header', locals: {
+      description: 'Aqui você poderá editar as informações do seu perfil, tanto como e-mail e/ou senha.',
+      title: 'Perfil do Usuário',
+      css_class: 'col-lg-8 col-8'
   } %>
 
-  <%= render 'dashboard/users/form_edit', locals: {
-      button_name: @button_name = I18n.t('dashboard.common.buttons.save'),
-      action: @action = dashboard_user_update_path,
+  <%= render partial: 'dashboard/users/form_edit', locals: {
+      button_name: I18n.t('dashboard.common.buttons.save'),
+      action: dashboard_user_update_path,
   } %>
 
   <%= render 'dashboard/partials_shared/footer' %>

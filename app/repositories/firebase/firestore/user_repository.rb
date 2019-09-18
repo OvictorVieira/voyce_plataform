@@ -14,24 +14,24 @@ module Firebase
         I18n.t('dashboard.user_to_artist.buttons.prefer_not_to_say')
       ]
 
-      attr_accessor :firebase_communicator_user, :firestore_user
+      attr_accessor :user_firebase_communicator, :user_firestore
 
       def initialize
-        @firestore_user = FirestoreUser.new
-        @firebase_communicator_user = CommunicationUser.new
+        @user_firestore = UserFirestore.new
+        @user_firebase_communicator = UserCommunication.new
       end
 
       def access_account(email, password)
-        firebase_communicator_user.login_on_firebase(email, password)
+        user_firebase_communicator.login_on_firebase(email, password)
       end
 
       def transform_listener_in_artist(args, user_id)
         args.merge!(type: ARTIST_TYPE)
-        firestore_user.update_user(args, user_id)
+        user_firestore.update_user(args, user_id)
       end
 
       def update_user_data(args, user_id)
-        firestore_user.update_user(args, user_id)
+        user_firestore.update_user(args, user_id)
       end
     end
   end
