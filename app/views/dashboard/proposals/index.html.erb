@@ -38,7 +38,7 @@
                 </tr>
               </thead>
               <tbody>
-                <% if @all_proposals.first.present? %>
+                <% if @all_proposals.present? && @all_proposals.first.present? %>
 
                   <% @all_proposals.each do |proposal| %>
                     <tr>

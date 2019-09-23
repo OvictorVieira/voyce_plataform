@@ -42,7 +42,7 @@ class Dashboard::ProposalsController < ApplicationController
       allowed_parameters = filter_params
       allowed_parameters.merge!(user_id: current_user[:id])
       proposal_service = Firebase::Firestore::ProposalService.new(allowed_parameters)
-      proposal_service.update_proposal
+      proposal_service.process_update
       flash[:success] = I18n.t('dashboard.proposals.messages.success_on_update')
     rescue =>  error
       flash[:danger] = error.message
@@ -54,7 +54,7 @@ class Dashboard::ProposalsController < ApplicationController
   private
 
   def filter_params
-    params.permit(:proposal_name, :price, :description, :proposal_id)
+    params.permit(:proposal_name, :price, :description, :proposal_id, :proposal_image)
   end
 
 end

@@ -26,7 +26,8 @@
                 <th scope="col" class="text-center"><%= I18n.t('dashboard.music.fields.message') %></th>
               </tr>
             </thead>
-            <% if @singles.first.present? || @albuns.first.present? %>
+            <% if (@singles.present? && @singles.first.present?) ||
+                  (@albuns.present? && @albuns.first.present?) %>
               <%= render partial: 'singles', locals: { singles: @singles } %>
 
               <%#= render partial: 'albuns', locals: { albuns: @albuns } %>
