@@ -23,10 +23,9 @@ module Voyce
     config.app.firebase = OpenStruct.new
     config.app.firebase.storage = OpenStruct.new
     config.app.firebase.firestore = OpenStruct.new
+    config.app.firebase.api_key = Rails.application.credentials[:firebase][:api_key]
     config.app.firebase.storage.bucket = Rails.application.credentials[:storage][:bucket]
-    config.app.firebase.firestore.api_key = Rails.application.credentials[:firestore][:api_key]
-    config.app.firebase.firestore.credentials = Rails.application.credentials[:firestore][:secret_data]
-    config.app.firebase.firestore.project_id = Rails.application.credentials[:firestore][:secret_data][:project_id]
+    config.app.firebase.firestore.project_id = Rails.application.credentials[:firestore][:project_id]
 
     config.app.assets.images = 'app/assets/images/'.freeze
     config.app.assets.js_prefix = 'app/assets/javascripts/'.freeze

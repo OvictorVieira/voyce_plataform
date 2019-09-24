@@ -43,7 +43,7 @@ module Firebase
       end
 
       def load_api_key
-        Rails.application.config.app.firebase.firestore.api_key
+        Rails.application.config.app.firebase.api_key
       end
 
       def mount_headers(args = {})

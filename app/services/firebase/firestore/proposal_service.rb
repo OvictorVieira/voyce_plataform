@@ -34,10 +34,9 @@ module Firebase
         validate_valid_file
         validate_the_price_is_valid
         image_uploaded = save_image_on_storage
-        raise_exception(SaveImageError) unless image_uploaded[:success]
 
         image = image_uploaded[:image]
-        create_proposal(fields_formated.merge(image: image.self_link))
+        create_proposal(fields_formated.merge!(image: image.self_link))
       end
 
       def process_update
@@ -45,16 +44,25 @@ module Firebase
         check_fields_passed = verify_fields_are_present(fields_formated)
         raise_exception(FieldsAreNotPresentError) unless check_fields_passed
 
-        validate_valid_file
         validate_the_price_is_valid
 
-        update_proposal(fields.merge(image: image_url))
+        if data['proposal_image'].present?
+          image_uploaded = save_image_on_storage
+
+          image = image_uploaded[:image]
+          fields_formated.merge(image: image.self_link)
+        end
+
+        update_proposal(fields_formated)
       end
 
       private
 
       def save_image_on_storage
-        proposal_repository.save_image_on_storage(data['proposal_image'])
+        image_uploaded = proposal_repository.save_image_on_storage(data['proposal_image'])
+        raise_exception(SaveImageError) unless image_uploaded[:success]
+
+        image_uploaded
       end
 
       def update_proposal(fields_formated)
