@@ -1,8 +1,5 @@
 <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
   <div class="container px-4 mb-4">
-    <a class="navbar-brand" href="<%= root_path %>">
-      <img src="" alt="Marca"/>
-    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,9 +7,6 @@
       <div class="navbar-collapse-header d-md-none">
         <div class="row">
           <div class="col-6 collapse-brand">
-            <a href="">
-              <img src="" alt="alguma imagem">
-            </a>
           </div>
           <div class="col-6 collapse-close">
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
@@ -23,12 +17,6 @@
         </div>
       </div>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="<%= root_path %>">
-            <i class="ni ni-circle-08"></i>
-            <span class="nav-link-inner--text">Baixar o App</span>
-          </a>
-        </li>
         <li class="nav-item">
           <a class="btn btn-primary mx-5 my-2" href="<%= guest_auth_login_path %>">
             <%= I18n.t('guest.login.buttons.login') %>
