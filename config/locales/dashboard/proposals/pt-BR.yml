@@ -9,6 +9,7 @@ pt-BR:
       fields:
         proposal: 'Plano'
         price: 'Preço'
+        select_file: 'Imagem do plano'
         sponsors: 'Nº Assinantes'
         status: 'Status'
         edit: 'Edições'
@@ -23,6 +24,8 @@ pt-BR:
               (R$ 50,00 ou até mesmo R$ 100,00, por exemplo).
               Se você tiver mais de um plano, certifique-se de cobrir preços altos
               e baixos (R$ 5,00 a R$ 40,00).'
+      placeholder:
+        proposal-image: 'Capa do plano no aplicativo Voyce'
       statuses:
         active: 'Ativo'
         inactive: 'Inativo'
@@ -43,3 +46,8 @@ pt-BR:
         get_proposal_error: 'Ocorreu erro ao buscar o plano, tente novamente.'
         invalid_fields: 'Atenção! Para criar um plano, preencha os campos Nome, Preço e Descrição'
         invalid_price: 'O valor informado no campo preço é inválido, insira um valor válido!'
+        invalid_format_image: 'O formato da imagem é inválido, selecione uma imagem com formato válido!'
+        image_obligatory: 'O envio da imagem é obrigatório!'
+        save_image_error: 'Ocorreu erro ao tentar salvar imagem, tente novamente!'
+        invalid_format_audio: 'O formato do arquivo de áudio é inválido,
+                               selecione um áudio com formato válido!'

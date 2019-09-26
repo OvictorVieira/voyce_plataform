@@ -9,10 +9,11 @@ module Firebase
         I18n.t('dashboard.proposals.statuses.active')
       ]
 
-      attr_accessor :proposal_firestore
+      attr_accessor :proposal_firestore, :proposal_storage
 
       def initialize
         @proposal_firestore = ProposalFirestore.new
+        @proposal_storage = Storage::ProposalStorage.new
       end
 
       def load_proposal(user_id, proposal_id)
@@ -29,6 +30,10 @@ module Firebase
 
       def update_proposal(user_id, data)
         proposal_firestore.process_update_proposal(user_id, data)
+      end
+
+      def save_image_on_storage(image)
+        proposal_storage.save_image_on_storage(image)
       end
     end
   end

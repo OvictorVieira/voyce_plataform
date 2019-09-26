@@ -21,12 +21,24 @@ module Voyce
     config.app = OpenStruct.new
     config.app.assets = OpenStruct.new
     config.app.firebase = OpenStruct.new
+    config.app.firebase.storage = OpenStruct.new
     config.app.firebase.firestore = OpenStruct.new
-    config.app.firebase.firestore.api_key = Rails.application.credentials[:firestore][:api_key]
-    config.app.firebase.firestore.credentials = Rails.application.credentials[:firestore][:secret_data]
-    config.app.firebase.firestore.project_id = Rails.application.credentials[:firestore][:secret_data][:project_id]
+    config.app.firebase.api_key = Rails.application.credentials[:firebase][:api_key]
+    config.app.firebase.storage.bucket = Rails.application.credentials[:storage][:bucket]
+    config.app.firebase.firestore.project_id = Rails.application.credentials[:firestore][:project_id]
+
     config.app.assets.images = 'app/assets/images/'.freeze
     config.app.assets.js_prefix = 'app/assets/javascripts/'.freeze
     config.app.assets.style_prefix = 'app/assets/stylesheets/'.freeze
   end
+end
+
+Google::Cloud::Storage.configure do |config|
+  config.project_id  = Rails.application.config.app.firebase.firestore.project_id
+  config.credentials = "/var/www/html/voyce/config/voyce-keyfile.json"
+end
+
+Google::Cloud::Firestore.configure do |config|
+  config.project_id  = Rails.application.config.app.firebase.firestore.project_id
+  config.credentials = "/var/www/html/voyce/config/voyce-adminsdk.json"
 end
