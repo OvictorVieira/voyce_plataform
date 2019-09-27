@@ -14,11 +14,11 @@ module Firebase
         @bucket_name = storage_base.bucket
       end
 
-      def save_image_on_storage(image)
+      def save_image_on_storage(image, user_id)
         begin
           bucket = storage.bucket(bucket_name)
           image_uploaded = bucket.create_file(image.tempfile.path,
-                                              "#{IMAGE_PROPOSAL_BUCKET}/#{image.original_filename}")
+                                              "#{IMAGE_PROPOSAL_BUCKET}/#{user_id}/#{image.original_filename}")
           success(image: image_uploaded.gapi)
         rescue
           fail

@@ -32,8 +32,8 @@ module Firebase
         proposal_firestore.process_update_proposal(user_id, data)
       end
 
-      def save_image_on_storage(image)
-        proposal_storage.save_image_on_storage(image)
+      def save_image_on_storage(image, user_id)
+        proposal_storage.save_image_on_storage(image, user_id)
       end
     end
   end
