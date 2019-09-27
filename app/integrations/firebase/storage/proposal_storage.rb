@@ -14,7 +14,7 @@ module Firebase
         @bucket_name = storage_base.bucket
       end
 
-      def save_image_on_storage(image, user_id)
+      def save_image_on_storage(user_id, image)
         begin
           bucket = storage.bucket(bucket_name)
           image_uploaded = bucket.create_file(image.tempfile.path,
