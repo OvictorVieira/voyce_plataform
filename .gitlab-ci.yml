@@ -18,5 +18,3 @@ deploy-production:
   allow_failure: true
   script:
     - dpl --provider=heroku --app=voyce --api-key=$HEROKU_PRODUCTION_API_KEY
-  only:
-    - tags
