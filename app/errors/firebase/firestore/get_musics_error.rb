@@ -1,6 +1,6 @@
 module Firebase
   module Firestore
-    class GetMusicError < StandardError
+    class GetMusicsError < StandardError
 
       def initialize
         super(I18n.t('dashboard.users.messages.errors.get_musics'))
