@@ -1,7 +1,19 @@
-production:
-  stage: deploy
+before_script:
+  - echo "deb http://toolbelt.heroku.com/ubuntu ./" > /etc/apt/sources.list.d/heroku.list
+  - wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add -
+  - apt-get update
+  - apt-get install -y heroku-toolbelt
+  - gem install dpl
+
+stages:
+  - production
+
+deploy-production:
+  stage: production
+  environment: production
+  variables:
+    HEROKU_API_KEY: $HEROKU_STAGING_API_KEY
+  when: manual
+  allow_failure: true
   script:
-    - gem install dpl
-    - dpl --provider=heroku --app=gitlab-ci-ruby-test-prod --api-key=$HEROKU_PRODUCTION_API_KEY
-  only:
-    - tags
+    - dpl --provider=heroku --app=staging-formulariocontato --api-key=$HEROKU_API_KEY
