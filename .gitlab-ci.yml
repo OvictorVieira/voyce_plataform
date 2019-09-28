@@ -1,22 +1,13 @@
-image: "ruby:2.6"
-
 stages:
   - production
-
-before_script:
-  - apt-get update -qq && apt-get install -y nodejs
-  - ruby -v
-  - which ruby
-  - gem install bundler --no-document
-  - bundle install
-
-rubocop:
-  script:
-    - bundle exec rubocop
-
-deploy-production:
+deploy-test:
   stage: production
+  environment: production
   variables:
     HEROKU_API_KEY: $HEROKU_STAGING_API_KEY
+  tags:
+    - deploymen
+  when: manual
+  allow_failure: true
   script:
     - dpl --provider=heroku --app=staging-formulariocontato --api-key=$HEROKU_API_KEY
