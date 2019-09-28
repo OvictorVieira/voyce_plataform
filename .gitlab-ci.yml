@@ -1,6 +1,6 @@
 stages:
   - production
-deploy-test:
+deploy-production:
   stage: production
   environment: production
   variables:
