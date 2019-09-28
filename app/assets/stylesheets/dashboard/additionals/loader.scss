@@ -1,0 +1,40 @@
+.loader {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin: 15vh auto;
+  z-index: 99999;
+  left: 50%;
+  top: 25%;
+  position: fixed;
+}
+
+#wave {
+  height: 70px;
+  width: 70px;
+  fill: #f44a0c;
+}
+
+@for $i from 1 through 9 {
+  #Line_#{$i} {
+    animation: pulse 1s infinite;
+    animation-delay: $i * .15s;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scaleY(1);
+    transform-origin: 50% 50%;
+  }
+
+  50% {
+    transform: scaleY(.7);
+    transform-origin: 50% 50%;
+  }
+
+  100% {
+    transform: scaleY(1);
+    transform-origin: 50% 50%;
+  }
+}

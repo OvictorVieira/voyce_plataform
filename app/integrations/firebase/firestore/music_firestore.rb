@@ -4,7 +4,7 @@ module Firebase
 
       include Formatters::ResponseFormatter
 
-      END_POINT = 'music'.freeze
+      END_POINT = 'musics'.freeze
       SINGLES_COLLECTION_TYPE = 'singles'.freeze
       ALBUNS_COLLECTION_TYPE = 'albuns'.freeze
 
@@ -21,7 +21,18 @@ module Firebase
           albuns = get_albuns(songs)
           success.merge!(singles_and_albuns(singles, albuns))
         rescue => error
-          fail(message: GetMusicError, error: error.message)
+          fail(message: GetMusicError)
+        end
+      end
+
+      def create_music(user_id, data)
+        begin
+          songs = firestore_base.col(END_POINT).doc(user_id).col(SINGLES_COLLECTION_TYPE)
+          songs.add(data)
+
+          success
+        rescue => error
+          fail
         end
       end
 
