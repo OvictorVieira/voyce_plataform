@@ -1,13 +1,7 @@
-stages:
-  - production
-deploy-production:
-  stage: production
-  environment: production
-  variables:
-    HEROKU_API_KEY: $HEROKU_STAGING_API_KEY
-  tags:
-    - deploymen
-  when: manual
-  allow_failure: true
+production:
+  stage: deploy
   script:
-    - dpl --provider=heroku --app=staging-formulariocontato --api-key=$HEROKU_API_KEY
+    - gem install dpl
+    - dpl --provider=heroku --app=gitlab-ci-ruby-test-prod --api-key=$HEROKU_PRODUCTION_API_KEY
+  only:
+    - tags
