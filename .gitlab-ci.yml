@@ -14,9 +14,7 @@ stages:
 deploy-production:
   stage: production
   environment: production
-  variables:
-    HEROKU_API_KEY: $HEROKU_STAGING_API_KEY
   when: manual
   allow_failure: true
   script:
-    - dpl --provider=heroku --app=staging-formulariocontato --api-key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app=staging-formulariocontato --api-key=$HEROKU_STAGING_API_KEY
