@@ -31,7 +31,15 @@
           </div>
 
           <% if @singles.present? && @singles.first.present? %>
-
+          
+          <% else %>
+            <div class="media align-items-center m-4">
+              <div class="media-body">
+                <span class="mb-0 text-sm">
+                  Nenhuma música encontrada
+                </span>
+              </div>
+            </div>
           <% end %>
 
           <!-- Pagination -->

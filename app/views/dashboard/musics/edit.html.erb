@@ -5,44 +5,44 @@
   <%= render 'dashboard/partials_shared/navbar' %>
 
   <%= render partial: 'dashboard/partials_shared/header', locals: {
-      description: 'Faça a edição dos planos já cadastrados.',
-      title: 'Edição de Plano',
+      description: 'Edite suas músicas para que as pessoas possam ouvi-las no Voyce.',
+      title: 'Edição de Músicas',
       css_class: 'col-lg-12 col-12'
   } %>
 
-  <div class="container-fluid mt--8">
+  <%= render partial: 'dashboard/partials_shared/loader' %>
 
+  <div class="container-fluid mt--8">
     <div class="row">
-      <div class="col-xl-8 order-xl-1">
-        <div class="card">
-          <div class="card-header">
-            <div class="row align-items-center text-uppercase">
-              <div class="col-8">
-                <h3 class="mb-0">
-                  <%= I18n.t('dashboard.proposals.titles.proposals_create') %>
-                </h3>
-              </div>
-              <div class="col-4 text-right">
-                <a href="<%= dashboard_proposals_path %>" class="btn btn-link text-warning text-right">
-                  <%= I18n.t('dashboard.proposals.buttons.back') %>
-                </a>
+
+      <%= form_tag dashboard_create_music_path, :id => 'form-action', multipart: true, class: 'd-flex' do %>
+
+        <div class="col-xl-8 order-xl-1">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center text-uppercase">
+                <div class="col-8">
+                  <h3 class="mb-0">
+                    <%= I18n.t('dashboard.musics.titles.edit') %>
+                  </h3>
+                </div>
+                <div class="col-4 text-right">
+                  <a href="<%= dashboard_musics_path %>" class="btn btn-link text-warning text-right">
+                    <%= I18n.t('dashboard.musics.buttons.back') %>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card-body">
-            <%= form_tag dashboard_update_proposals_url, :id => 'form-action' do %>
-
-              <%= hidden_field_tag :proposal_id, @proposal.document_id %>
-
+            <div class="card-body">
               <h6 class="heading-small text-muted mb-4">
-                <%= I18n.t('dashboard.proposals.fields.proposals_informations') %>
+                <%= I18n.t('dashboard.musics.fields.musics_informations') %>
               </h6>
               <div class="row pl-lg-2 pr-lg-2">
                 <div class="col-12">
                   <div class="form-group d-flex flex-row mb-2">
-                    <label class="w-25 mr-3">
+                    <label class="w-25 mr-3" for="music_title">
                       <h4 class="h4 font-weight-600 mb-1">
-                        <%= I18n.t('dashboard.proposals.fields.proposal_name') %>
+                        <%= I18n.t('dashboard.musics.fields.title') %>
                       </h4>
                       <h4 class="h6 font-weight-300">
                         <%= I18n.t('dashboard.proposals.fields.required') %>
@@ -55,111 +55,87 @@
                         </span>
                       </div>
                       <input class="form-control"
-                             name="proposal_name"
-                             id="proposal-name"
-                             placeholder="(Ex.: Plano Silver)"
-                             value="<%= @proposal.data[:name] %>"
+                             name="music_title"
+                             id="music_title"
+                             placeholder="(Ex.: O dia que não terminou)"
                              type="text" required>
                     </div>
                   </div>
                 </div>
-                <div class="col-12">
-                  <div class="form-group d-flex flex-row mb-2">
-                    <label class="w-25 mr-3">
-                      <div class="h4 font-weight-600 mb-1">
-                        <%= I18n.t('dashboard.proposals.fields.price') %>
-                      </div>
-                      <div class="h6 font-weight-300">
-                        <%= I18n.t('dashboard.proposals.fields.required') %>
-                      </div>
-                    </label>
-                    <div class="input-group mb-4">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fas fa-money-bill-wave"></i>
-                        </span>
-                      </div>
-                      <input class="form-control money2"
-                             name="price"
-                             id="price"
-                             placeholder="5,00"
-                             value="<%= @proposal.data[:price] %>"
-                             type="number"
-                             min="0.00"
-                             max="10000.00"
-                             step="0.01" required>
-                    </div>
-                  </div>
-                </div>
 
                 <div class="col-12">
-                  <div class="form-group d-flex flex-row mb-2">
+                  <div class="form-group d-flex flex-row mb-2 justify-content-between">
                     <label class="w-25 mr-3">
                       <div class="h4 font-weight-600 mb-1">
-                        <%= I18n.t('dashboard.proposals.fields.select_file') %>
+                        <%= I18n.t('dashboard.musics.buttons.select_music') %>
                       </div>
                       <div class="h6 font-weight-300">
                         <%= I18n.t('dashboard.proposals.fields.required') %>
                       </div>
                     </label>
 
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="proposal_image" name="proposal_image">
+                    <div class="custom-file w-50">
+                      <input type="file" class="custom-file-input" id="music_file" name="music_file">
                       <label class="custom-file-label"
-                             for="proposal_image">
-                        <%= I18n.t('dashboard.proposals.placeholder.proposal-image') %>
+                             for="music_file">
+                        <%= I18n.t('dashboard.musics.buttons.select_music') %>
                       </label>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-12">
-                  <div class="form-group d-flex flex-row mb-2">
-                    <label class="w-25 mr-3">
-                      <h4 class="h4 font-weight-600 mb-1">
-                        <%= I18n.t('dashboard.proposals.fields.description') %>
-                      </h4>
-                      <h4 class="h6 font-weight-300">
+                  <div class="form-group d-flex flex-row mb-2 justify-content-between">
+                    <label class="w-25 mr-3" for="number_track">
+                      <div class="h4 font-weight-600 mb-1">
+                        <%= I18n.t('dashboard.musics.fields.number_track') %>
+                      </div>
+                      <div class="h6 font-weight-300">
                         <%= I18n.t('dashboard.proposals.fields.required') %>
-                      </h4>
+                      </div>
                     </label>
-                    <div class="input-group mb-4">
-                      <textarea class="form-control form-control-alternative"
-                                name="description"
-                                id="description"
-                                rows="4"
-                                cols="80"
-                                placeholder="Escreva aqui a descrição do seu plano..."><%= @proposal.data[:description] %></textarea>
+                    <div class="input-group mb-4 w-25">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="far fa-file-audio"></i>
+                        </span>
+                      </div>
+                      <input class="form-control"
+                             name="number_track"
+                             id="number_track"
+                             placeholder="1"
+                             type="number"
+                             min="0"
+                             required>
                     </div>
                   </div>
                 </div>
 
-                <div class="col-12 text-right">
+                <div class="col-12 d-flex justify-content-end">
                   <button type="submit" class="btn btn-success w-25" id="button-action">
-                    <%= I18n.t('dashboard.proposals.buttons.save') %>
+                    <%= I18n.t('dashboard.musics.buttons.update_music') %>
                   </button>
                 </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 order-xl-1">
-        <div class="card shadow shadow-lg--hover mt-6">
-          <div class="card-body">
-            <div class="d-flex">
-              <div class="pl-2">
-                <h2 class="title text-success">
-                  <%= I18n.t('dashboard.proposals.titles.tip') %>&nbsp;<i class="fas fa-check"></i>
-                </h2>
-                <p>
-                  <%= I18n.t('dashboard.proposals.fields.tip') %>
-                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <div class="col-xl-4 order-xl-1">
+          <div class="card shadow shadow-lg--hover">
+            <div class="card-body">
+              <%= image_tag('music-icon', class: 'card-img-top') %>
+            </div>
+            <div class="custom-file d-flex justify-content-center mb-5">
+              <input type="file" class="custom-file-input d-none" id="image_cover" name="image_cover">
+              <button type="button" class="btn btn-outline-primary w-50" id="anchor_upload">
+                <i class="fas fa-upload"></i>&nbsp;
+                <%= I18n.t('dashboard.musics.buttons.select_image') %>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
     </div>
 
     <%= render 'dashboard/partials_shared/footer' %>
@@ -168,4 +144,4 @@
 
 </div>
 
-<%= javascript_pack_tag 'additionals/proposals' %>
+<%= javascript_pack_tag 'additionals/disable_buttons' %>

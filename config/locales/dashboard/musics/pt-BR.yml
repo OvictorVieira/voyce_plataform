@@ -5,6 +5,7 @@ pt-BR:
         recent_musics: 'Músicas recentes'
         musics: 'Músicas'
         upload: 'Upload de Músicas'
+        edit: 'Edição de Músicas'
       fields:
         music_name: 'Música'
         status: 'Status'
@@ -24,6 +25,7 @@ pt-BR:
         singles: 'Singles'
         albuns: 'Álbuns'
         upload_music: 'Enviar Música'
+        update_music: 'Atualizar Música'
       statuses:
         pending_review: 'Pendente de análise'
         in_review: 'Em análise'
