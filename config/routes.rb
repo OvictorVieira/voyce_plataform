@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     get '/proposals/edit/:id', to: 'proposals#edit', as: 'edit_proposals'
     post '/proposals/update', to: 'proposals#update', as: 'update_proposals'
 
+    get '/musics', to: 'musics#index', as: 'musics'
+    get '/musics/new', to: 'musics#new', as: 'new_music'
+    post '/musics/create', to: 'musics#create', as: 'create_music'
   end
 
 end
