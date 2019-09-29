@@ -1,16 +1,24 @@
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  host: postgres
+  user: postgres
+  password: postgres
+  port: 5432
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: db_development
 
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: db_test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  user: <%= Rails.application.config.app.heroku.postgres.user %>
+  port: <%= Rails.application.config.app.heroku.postgres.port %>
+  host: <%= Rails.application.config.app.heroku.postgres.host %>
+  database: <%= Rails.application.config.app.heroku.postgres.database %>
+  password: <%= Rails.application.config.app.heroku.postgres.password %>
