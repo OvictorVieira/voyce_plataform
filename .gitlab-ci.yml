@@ -23,4 +23,4 @@ deploy-production:
     - bundle install
     - yarn install
     - rake assets:precompile
-    - bundle exec rake db:migrate
+    - heroku run rake db:migrate --exit-code --app voyce
