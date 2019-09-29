@@ -19,7 +19,7 @@ deploy-production:
   when: manual
   allow_failure: true
   script:
+    - dpl --provider=heroku --app=voyce --api-key=$HEROKU_PRODUCTION_API_KEY
     - bundle install
     - yarn install
-    - rake assets:precompile 
-    - dpl --provider=heroku --app=voyce --api-key=$HEROKU_PRODUCTION_API_KEY
+    - rake assets:precompile
