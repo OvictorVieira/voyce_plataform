@@ -19,13 +19,21 @@ module Voyce
     config.assets.paths << Rails.root.join("app", "assets", "img")
 
     config.app = OpenStruct.new
+    config.app.heroku = OpenStruct.new
     config.app.assets = OpenStruct.new
     config.app.firebase = OpenStruct.new
+    config.app.heroku.postgres = OpenStruct.new
     config.app.firebase.storage = OpenStruct.new
     config.app.firebase.firestore = OpenStruct.new
     config.app.firebase.api_key = Rails.application.credentials[:firebase][:api_key]
     config.app.firebase.storage.bucket = Rails.application.credentials[:firebase][:storage][:bucket]
     config.app.firebase.firestore.project_id = Rails.application.credentials[:firebase][:firestore][:project_id]
+
+    config.app.heroku.postgres.user = Rails.application.credentials[:database][:user]
+    config.app.heroku.postgres.host = Rails.application.credentials[:database][:host]
+    config.app.heroku.postgres.user = Rails.application.credentials[:database][:user]
+    config.app.heroku.postgres.database = Rails.application.credentials[:database][:database]
+    config.app.heroku.postgres.password = Rails.application.credentials[:database][:password]
 
     config.app.assets.images = 'app/assets/images/'.freeze
     config.app.assets.js_prefix = 'app/assets/javascripts/'.freeze
