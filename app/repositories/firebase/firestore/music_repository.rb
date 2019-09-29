@@ -9,10 +9,10 @@ module Firebase
         I18n.t('dashboard.musics.statuses.approved')
       ]
 
-      STATUS_PENDING_REVIEW = 0
-      STATUS_IN_REVIEW = 1
-      STATUS_DISAPPROVED = 2
-      STATUS_APPROVED = 3
+      STATUS_PENDING_REVIEW = 1
+      STATUS_IN_REVIEW = 2
+      STATUS_DISAPPROVED = 3
+      STATUS_APPROVED = 4
 
       attr_accessor :music_firestore, :music_storage
 
@@ -25,10 +25,6 @@ module Firebase
         music_firestore.load_all_songs(user_id)
       end
 
-      def load_song(user_id, music_id)
-        music_firestore.load_song(user_id, music_id)
-      end
-
       def save_music_on_storage(music, user_id)
         music_storage.save_music_on_storage(music, user_id)
       end
@@ -39,10 +35,6 @@ module Firebase
 
       def create_music(user_id, fields)
         music_firestore.create_music(user_id, fields)
-      end
-
-      def update_music(user_id, music_id, data)
-        music_firestore.update_music(user_id, music_id, data)
       end
     end
   end
