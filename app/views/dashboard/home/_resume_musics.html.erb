@@ -4,16 +4,16 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0 text-uppercase text-muted d-flex justify-content-between">
-          <h3 class="mb-0"><%= I18n.t('dashboard.musics.titles.recent_musics') %></h3>
+          <h3 class="mb-0"><%= I18n.t('dashboard.music.titles.recent_musics') %></h3>
 
           <div class="btn-group btn-group-toggle w-25" data-toggle="buttons">
 <!--            <label class="btn btn-secondary active">-->
 <!--              <input type="radio" name="singles" id="singles" autocomplete="off" checked>-->
-<!--              &nbsp;<%#= I18n.t('dashboard.musics.buttons.singles') %>-->
+<!--              &nbsp;<%#= I18n.t('dashboard.music.buttons.singles') %>-->
 <!--            </label>-->
 <!--            <label class="btn btn-secondary">-->
 <!--              <input type="radio" name="albuns" id="albuns" autocomplete="off">-->
-<!--              &nbsp;<%#= I18n.t('dashboard.musics.buttons.albuns') %>-->
+<!--              &nbsp;<%#= I18n.t('dashboard.music.buttons.albuns') %>-->
 <!--            </label>-->
           </div>
         </div>
@@ -21,9 +21,9 @@
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th scope="col" class="pl-6"><%= I18n.t('dashboard.musics.fields.music_name') %></th>
-                <th scope="col"><%= I18n.t('dashboard.musics.fields.status') %></th>
-                <th scope="col" class="text-center"><%= I18n.t('dashboard.musics.fields.message') %></th>
+                <th scope="col" class="pl-6"><%= I18n.t('dashboard.music.fields.music_name') %></th>
+                <th scope="col"><%= I18n.t('dashboard.music.fields.status') %></th>
+                <th scope="col" class="text-center"><%= I18n.t('dashboard.music.fields.message') %></th>
               </tr>
             </thead>
             <% if (@singles.present? && @singles.first.present?) ||
@@ -38,7 +38,7 @@
                     <div class="media align-items-center mt-3">
                       <div class="media-body">
                         <span class="mb-0 text-sm">
-                          <%= I18n.t('dashboard.musics.fields.no_music') %>
+                          <%= I18n.t('dashboard.music.fields.no_music') %>
                         </span>
                       </div>
                     </div>

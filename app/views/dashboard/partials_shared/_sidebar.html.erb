@@ -11,6 +11,13 @@
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
             <li class="nav-item dropdown">
+                <a class="nav-link" href="<%= dashboard_url %>" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="media align-items-center">
+                        <span class="avatar avatar-sm rounded-circle">
+                          <%= image_tag('voyce-logo.jpg', class: "navbar-brand-img img-responsive", alt: I18n.t('dashboard.home.placeholders.voyce_logo')) %>
+                        </span>
+                    </div>
+                </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
                     <div class=" dropdown-header noti-title">
                         <h6 class="text-overflow m-0"><%= I18n.t('dashboard.home.titles.welcome') %></h6>
@@ -35,7 +42,7 @@
                 <div class="row">
                     <div class="col-6 collapse-brand">
                         <a href="<%= dashboard_url %>">
-                          <%= image_tag('voyce-logo', class: "navbar-brand-img img-responsive", alt: I18n.t('dashboard.home.placeholders.voyce_logo')) %>
+                          <%= image_tag('voyce-logo.jpg', class: "navbar-brand-img img-responsive", alt: I18n.t('dashboard.home.placeholders.voyce_logo')) %>
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
@@ -50,19 +57,19 @@
             <% unless is_only_listener? %>
               <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="<%= dashboard_url %>">
-                        <i class="fas fa-home text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.home_page') %>
-                    </a>
+                      <a class="nav-link" href="<%= dashboard_url %>">
+                          <i class="fas fa-home text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.home_page') %>
+                      </a>
                   </li>
+<!--                  <li class="nav-item">-->
+<!--                      <a class="nav-link" href="#">-->
+<!--                          <i class="fas fa-upload text-primary"></i>&nbsp;<%#= I18n.t('dashboard.home.buttons.upload_music') %>-->
+<!--                      </a>-->
+<!--                  </li>-->
                   <li class="nav-item">
-                    <a class="nav-link" href="<%= dashboard_musics_url %>">
-                      <i class="fas fa-music text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.musics') %>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="<%= dashboard_proposals_url %>">
-                        <i class="fas fa-hand-holding-usd text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.proposals') %>
-                    </a>
+                      <a class="nav-link" href="<%= dashboard_proposals_path %>">
+                          <i class="fas fa-hand-holding-usd text-primary"></i>&nbsp;<%= I18n.t('dashboard.home.buttons.proposals') %>
+                      </a>
                   </li>
 <!--                  <li class="nav-item">-->
 <!--                      <a class="nav-link" href="#">-->

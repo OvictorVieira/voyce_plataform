@@ -42,7 +42,7 @@ module Firebase
       def process_update
         fields_formated = format_data_to_send
         check_fields_passed = verify_fields_are_present(fields_formated)
-        raise_exception(ProposalFieldsNotPresentError) unless check_fields_passed
+        raise_exception(FieldsAreNotPresentError) unless check_fields_passed
 
         validate_the_price_is_valid
 
@@ -59,8 +59,8 @@ module Firebase
       private
 
       def save_image_on_storage
-        image_uploaded = proposal_repository.save_image_on_storage(data[:user_id], data['proposal_image'])
-        raise_exception(Storage::SaveImageError) unless image_uploaded[:success]
+        image_uploaded = proposal_repository.save_image_on_storage(data['proposal_image'])
+        raise_exception(SaveImageError) unless image_uploaded[:success]
 
         image_uploaded
       end
@@ -99,7 +99,7 @@ module Firebase
 
       def validate_valid_file
         begin
-          raise Storage::InvalidImageFormatError unless validates_format_image(data['proposal_image'].content_type)
+          raise Storage::InvalidFormatFileError unless validates_format_image(data['proposal_image'].content_type)
         rescue
           raise Storage::ImageObligatoryError
         end

@@ -1,6 +1,6 @@
 module Firebase
   module Firestore
-    class ProposalFieldsNotPresentError < StandardError
+    class FieldsAreNotPresentError < StandardError
 
       def initialize
         super(I18n.t('dashboard.proposals.errors.invalid_fields'))
