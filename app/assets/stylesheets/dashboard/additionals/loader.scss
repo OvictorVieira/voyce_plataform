@@ -2,15 +2,16 @@
   display: inline-block;
   width: 1rem;
   height: 1rem;
+  margin: 15vh auto;
   z-index: 99999;
-  left: 40%;
-  top: 40%;
+  left: 50%;
+  top: 25%;
   position: fixed;
 }
 
 #wave {
-  height: 12vh;
-  width: 12vw;
+  height: 70px;
+  width: 70px;
   fill: #f44a0c;
 }
 
