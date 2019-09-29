@@ -46,7 +46,7 @@ class Dashboard::MusicsController < ApplicationController
       allowed_parameters = filter_params
       allowed_parameters.merge!(user_id: current_user[:id])
       music_service = Firebase::Firestore::MusicService.new(allowed_parameters)
-      music_service.process_update
+      music_service.process_update 
 
       flash[:success] = I18n.t('dashboard.musics.messages.success_on_update')
     rescue =>  error
