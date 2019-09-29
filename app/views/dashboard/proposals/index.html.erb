@@ -42,7 +42,18 @@
 
                   <% @all_proposals.each do |proposal| %>
                     <tr>
-                      <td><%= proposal.data[:name] %></td>
+                      <td>
+                        <div class="media align-items-center">
+                          <a href="#" class="avatar rounded-circle mr-3">
+                            <img alt="<%= proposal.data[:name] %>" src="<%= proposal.data[:image] %>">
+                          </a>
+                          <div class="media-body">
+                          <span class="mb-0 text-sm">
+                            <%= proposal.data[:name] %>
+                          </span>
+                          </div>
+                        </div>
+                      </td>
                       <td>
                         <span class="text-success mr-2">
                           <%= format_currency_br(proposal.data[:price]) %>
