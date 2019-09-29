@@ -4,10 +4,8 @@ default:
 before_script:
   - echo "deb http://toolbelt.heroku.com/ubuntu ./" > /etc/apt/sources.list.d/heroku.list
   - wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add -
-  - wget -O- https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-  - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
   - apt-get update
-  - apt-get install -y heroku-toolbelt yarn
+  - apt-get install -y heroku-toolbelt
   - gem install dpl
 
 stages:
