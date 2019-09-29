@@ -43,5 +43,4 @@ class Dashboard::MusicsController < ApplicationController
   def filter_params
     params.permit(:music_title, :music_file, :number_track, :image_cover)
   end
-
 end
