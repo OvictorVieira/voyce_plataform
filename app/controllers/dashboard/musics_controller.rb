@@ -9,6 +9,7 @@ class Dashboard::MusicsController < ApplicationController
     rescue =>  error
       flash[:danger] = error.message
     end
+    
   end
 
   def new
