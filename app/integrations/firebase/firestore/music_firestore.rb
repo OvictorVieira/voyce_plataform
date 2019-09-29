@@ -40,7 +40,7 @@ module Firebase
           songs.add(data)
 
           success
-        rescue => error
+        rescue => error 
           fail(message: CreateMusicsError)
         end
       end
