@@ -35,8 +35,7 @@ module Firebase
         validate_the_price_is_valid
         image_uploaded = save_image_on_storage
 
-        image = image_uploaded[:image]
-        create_proposal(fields_formated.merge!(image: image.self_link))
+        create_proposal(fields_formated.merge!(image: create_public_urls(image_uploaded[:image])))
       end
 
       def process_update

@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     get '/musics', to: 'musics#index', as: 'musics'
     get '/musics/new', to: 'musics#new', as: 'new_music'
     post '/musics/create', to: 'musics#create', as: 'create_music'
+    get '/musics/edit/:id', to: 'musics#edit', as: 'edit_music'
+    post '/musics/update', to: 'musics#update', as: 'update_music'
   end
 
 end

@@ -5,9 +5,9 @@
     <tr>
       <th scope="row">
         <div class="media align-items-center">
-          <span class="badge badge-dot mx-3">
-            <i class="fas fa-music"></i>
-          </span>
+          <a href="#" class="avatar rounded-circle mr-3">
+            <img alt="<%= music.data[:title] %>" src="<%= music.data[:image] %>">
+          </a>
           <div class="media-body">
             <span class="mb-0 text-sm">
               <%= music.data[:title] %>
@@ -17,7 +17,8 @@
       </th>
       <td>
         <span class="badge badge-dot mr-4">
-          <i class="bg-warning text-sm"></i>&nbsp;<%= load_music_status(music.data[:status]) %>
+          <i class="bg-<%= load_music_status_icon(music.data[:status]) %> text-sm"></i>&nbsp;
+          <%= load_music_status(music.data[:status]) %>
         </span>
       </td>
       <td>
@@ -26,6 +27,18 @@
             <span class="mb-0 text-sm">
               <%= music.data[:message] %>
             </span>
+          </div>
+        </div>
+      </td>
+      <td class="text-right">
+        <div class="dropdown">
+          <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-ellipsis-v"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow" x-placement="bottom-end" style="position: absolute; transform: translate3d(-160px, 31px, 0px); top: 0px; left: 0px; will-change: transform;">
+            <a class="dropdown-item" href="<%= dashboard_edit_music_path(music.document_id) %>">
+              <%= I18n.t('dashboard.musics.buttons.edit') %>
+            </a>
           </div>
         </div>
       </td>

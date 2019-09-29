@@ -9,6 +9,7 @@ class Dashboard::MusicsController < ApplicationController
     rescue =>  error
       flash[:danger] = error.message
     end
+    
   end
 
   def new
@@ -42,5 +43,4 @@ class Dashboard::MusicsController < ApplicationController
   def filter_params
     params.permit(:music_title, :music_file, :number_track, :image_cover)
   end
-
 end

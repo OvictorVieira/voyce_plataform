@@ -30,9 +30,33 @@
             </div>
           </div>
 
-          <% if @singles.present? && @singles.first.present? %>
-
-          <% end %>
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col" class="pl-6" style="width: 30vw;"><%= I18n.t('dashboard.musics.fields.music_name') %></th>
+                <th scope="col" style="width: 5vw;"><%= I18n.t('dashboard.musics.fields.status') %></th>
+                <th scope="col" class="text-left" style="width: 60vw;"><%= I18n.t('dashboard.musics.fields.message') %></th>
+                <th scope="col" style="width: 5vw;"></th>
+              </tr>
+            </thead>
+            <% if @singles.present? && @singles.first.present? %>
+              <%= render partial: 'dashboard/home/singles', locals: { singles: @singles } %>
+            <% else %>
+              <tbody>
+              <tr>
+                <th scope="row">
+                  <div class="media align-items-center mt-3">
+                    <div class="media-body">
+                        <span class="mb-0 text-sm">
+                          <%= I18n.t('dashboard.musics.fields.no_music') %>
+                        </span>
+                    </div>
+                  </div>
+                </th>
+              </tr>
+              </tbody>
+            <% end %>
+          </table>
 
           <!-- Pagination -->
           <div class="card-footer py-4">
