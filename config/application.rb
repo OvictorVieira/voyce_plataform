@@ -43,10 +43,10 @@ end
 
 Google::Cloud::Storage.configure do |config|
   config.project_id  = Rails.application.config.app.firebase.firestore.project_id
-  config.credentials = "/var/www/html/voyce/config/voyce-keyfile.json"
+  config.credentials = Rails.application.credentials[:firebase][Rails.env.to_sym][:storage_keyfile_path]
 end
 
 Google::Cloud::Firestore.configure do |config|
   config.project_id  = Rails.application.config.app.firebase.firestore.project_id
-  config.credentials = "/var/www/html/voyce/config/voyce-adminsdk.json"
+  config.credentials = Rails.application.credentials[:firebase][Rails.env.to_sym][:firestore_keyfile_path]
 end
