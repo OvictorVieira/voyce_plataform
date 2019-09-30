@@ -4,8 +4,10 @@ default:
 before_script:
   - echo "deb http://toolbelt.heroku.com/ubuntu ./" > /etc/apt/sources.list.d/heroku.list
   - wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add -
+  - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+  - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
   - apt-get update
-  - apt-get install -y heroku-toolbelt
+  - apt-get install -y heroku-toolbelt yarn
   - gem install dpl
 
 stages:
@@ -17,4 +19,6 @@ deploy-production:
   when: manual
   allow_failure: true
   script:
+    - yarn install
+    - bundle install
     - dpl --provider=heroku --app=voyce --api-key=$HEROKU_PRODUCTION_API_KEY
