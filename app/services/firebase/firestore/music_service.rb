@@ -35,8 +35,8 @@ module Firebase
         validate_valid_image_file
         formated_data = format_data_to_send
 
-        upload_image(formated_data)
-        upload_music(formated_data)
+        formated_data = upload_image(formated_data)
+        formated_data = upload_music(formated_data)
 
         create_music(formated_data)
       end
@@ -94,8 +94,8 @@ module Firebase
         {
           title: data[:music_title],
           sequence: data[:number_track],
-          status: MusicRepository::STATUS_PENDING_REVIEW,
-          message: I18n.t('dashboard.musics.messages.music_pending_review')
+          status: MusicRepository::STATUS_APPROVED,
+          message: I18n.t('dashboard.musics.messages.music_approved_review')
         }
       end
 
