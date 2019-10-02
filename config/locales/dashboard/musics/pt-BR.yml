@@ -43,6 +43,7 @@ pt-BR:
         success_on_update: 'Sua música foi atualizada com sucesso, aguarde a aprovação da
                             nossa equipe.'
         music_pending_review: 'Pendente de analise da equipe Voyce.'
+        music_approved_review: 'Música aprovada.'
         alert_edit_music: 'Só é possível atualizar titulo ou número da faixa.'
         error:
           invalid_fields: 'Para enviar uma música, é necessário informar o Título, número da faixa,
