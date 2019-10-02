@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   root to: 'landing_page#index'
 
   namespace :guest do
-    get '/auth/login', to: 'guests#index'
+    get '/auth/login', to: 'guests#index', as: 'auth_login'
     post '/access-account', to: 'guests#access_account'
   end
 
   namespace :dashboard do
     get '/', to: 'home#index'
+
+    post 'auth/sign_out', to: 'home#sign_out', as: 'sign_out'
 
     # users
     get '/user/edit', to: 'users#edit', as: 'user_edit'
