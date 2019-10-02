@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
     current_user.present?
   end
 
+  def reset_session
+    @_request.reset_session
+  end
+
   private
 
   def current_user

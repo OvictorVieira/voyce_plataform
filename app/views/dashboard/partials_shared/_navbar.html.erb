@@ -22,11 +22,13 @@
             <span><%= I18n.t('dashboard.home.buttons.profile') %></span>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item" onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();">
-            <i class="ni ni-user-run"></i>
-            <span><%= I18n.t('dashboard.home.buttons.logout') %></span>
-          </a>
+          <%= form_tag dashboard_sign_out_url, id: 'logout-form' do %>
+            <a href="#" class="dropdown-item" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+              <i class="ni ni-user-run"></i>
+              <span><%= I18n.t('dashboard.home.buttons.logout') %></span>
+            </a>
+          <% end %>
         </div>
       </li>
     </ul>

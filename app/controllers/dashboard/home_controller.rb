@@ -11,4 +11,10 @@ class Dashboard::HomeController < ApplicationController
     end
   end
 
+  def sign_out
+    reset_session
+
+    redirect_to guest_auth_login_path
+  end
+
 end
