@@ -54,12 +54,12 @@ module Firebase
 
       def upload_image(formated_data)
         image_uploaded = save_image_on_storage
-        formated_data.merge(image: create_public_urls(image_uploaded[:image]))
+        formated_data.merge(image_url: create_public_urls(image_uploaded[:image]))
       end
 
       def upload_music(formated_data)
         music_uploaded = save_music_on_storage
-        formated_data.merge(music: create_public_urls(music_uploaded[:music]))
+        formated_data.merge(url: create_public_urls(music_uploaded[:music]))
       end
 
       def save_image_on_storage
@@ -93,7 +93,7 @@ module Firebase
       def format_data_to_send
         {
           title: data[:music_title],
-          sequence: data[:number_track],
+          position: data[:number_track].to_i,
           status: MusicRepository::STATUS_APPROVED,
           message: I18n.t('dashboard.musics.messages.music_approved_review')
         }
@@ -102,7 +102,7 @@ module Firebase
       def format_data_to_update
         {
           title: data[:music_title],
-          sequence: data[:number_track]
+          position: data[:number_track].to_i
         }
       end
 
