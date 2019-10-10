@@ -88,7 +88,7 @@
                              placeholder="1"
                              type="number"
                              min="0"
-                             value="<%= @song.data[:sequence] %>"
+                             value="<%= @song.data[:position] %>"
                              required>
                     </div>
                   </div>
@@ -105,7 +105,7 @@
         </div>
         <div class="col-xl-4 order-xl-1">
           <div class="card shadow shadow-lg--hover border-0">
-            <%= image_tag(@song.data[:image], class: 'card-img-top') %>
+            <%= image_tag(@song.data[:image_url], class: 'card-img-top') %>
           </div>
         </div>
 

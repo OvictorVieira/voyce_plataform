@@ -59,8 +59,7 @@ module Firebase
 
       def upload_music(formated_data)
         music_uploaded = save_music_on_storage
-        formated_data.merge(url: create_public_urls(music_uploaded[:music]),
-                            id: music_uploaded[:music].document_id)
+        formated_data.merge(url: create_public_urls(music_uploaded[:music]))
       end
 
       def save_image_on_storage
