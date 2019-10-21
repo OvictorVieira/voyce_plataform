@@ -25,7 +25,10 @@ services:
     container_name: application
     privileged: true
     volumes:
+      - ~/.ssh/:/home/docker/.ssh/
       - ../:/var/www/html/voyce
+    environment:
+      RAILS_MASTER_KEY: 34d098235bdacb6f9f11e881d1692c53
     ports:
       - "3000:3000"
       - "80:80"
