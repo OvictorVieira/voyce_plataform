@@ -27,20 +27,20 @@ module Firebase
       end
 
       def process_creation
-        fields_formated = format_data_to_send
-        check_fields_passed = verify_fields_are_present(fields_formated)
+        fields_formatted = format_data_to_send
+        check_fields_passed = verify_fields_are_present(fields_formatted)
         raise_exception(FieldsAreNotPresentError) unless check_fields_passed
 
         validate_valid_file
         validate_the_price_is_valid
         image_uploaded = save_image_on_storage
 
-        create_proposal(fields_formated.merge!(image: create_public_urls(image_uploaded[:image])))
+        create_proposal(fields_formatted.merge!(image: create_public_urls(image_uploaded[:image])))
       end
 
       def process_update
-        fields_formated = format_data_to_send
-        check_fields_passed = verify_fields_are_present(fields_formated)
+        fields_formatted = format_data_to_send
+        check_fields_passed = verify_fields_are_present(fields_formatted)
         raise_exception(ProposalFieldsNotPresentError) unless check_fields_passed
 
         validate_the_price_is_valid
@@ -49,10 +49,10 @@ module Firebase
           image_uploaded = save_image_on_storage
 
           image = image_uploaded[:image]
-          fields_formated.merge(image: image.self_link)
+          fields_formatted.merge(image: image.self_link)
         end
 
-        update_proposal(fields_formated)
+        update_proposal(fields_formatted)
       end
 
       private
@@ -64,16 +64,16 @@ module Firebase
         image_uploaded
       end
 
-      def update_proposal(fields_formated)
-        fields_formated.merge!(proposal_id: data[:proposal_id])
-        firestore_response = proposal_repository.update_proposal(data[:user_id], fields_formated)
+      def update_proposal(fields_formatted)
+        fields_formatted.merge!(proposal_id: data[:proposal_id])
+        firestore_response = proposal_repository.update_proposal(data[:user_id], fields_formatted)
         raise_exception(firestore_response[:message]) unless firestore_response[:success]
 
         firestore_response[:proposals]
       end
 
-      def create_proposal(fields_formated)
-        firestore_response = proposal_repository.create_proposal(data[:user_id], fields_formated)
+      def create_proposal(fields_formatted)
+        firestore_response = proposal_repository.create_proposal(data[:user_id], fields_formatted)
         raise_exception(firestore_response[:message]) unless firestore_response[:success]
 
         firestore_response[:proposals]
@@ -82,7 +82,7 @@ module Firebase
       def format_data_to_send
         {
           name: data[:proposal_name],
-          price: data[:price],
+          price: data[:price].to_f,
           description: data[:description],
           status:  ProposalRepository::STATUS_ACTIVE
         }

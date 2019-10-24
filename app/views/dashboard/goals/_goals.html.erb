@@ -1,0 +1,38 @@
+<tbody id="tbody-goals">
+
+<% goals.each do |goal| %>
+
+  <tr>
+    <th scope="row">
+      <div class="media align-items-center">
+        <div class="media-body">
+          <span class="mb-0 text-sm pl-3">
+            <%= number_to_currency_br goal.data[:price] %>
+          </span>
+        </div>
+      </div>
+    </th>
+    <td>
+      <div class="media align-items-center">
+        <div class="media-body text-left">
+            <span class="mb-0 text-sm text-overflow">
+              <%= goal.data[:description] %>
+            </span>
+        </div>
+      </div>
+    </td>
+    <td class="text-right">
+      <div class="dropdown">
+        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-ellipsis-v"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow" x-placement="bottom-end" style="position: absolute; transform: translate3d(-160px, 31px, 0px); top: 0px; left: 0px; will-change: transform;">
+          <a class="dropdown-item" href="<%= dashboard_edit_goal_path(goal.document_id) %>">
+            <%= I18n.t('dashboard.goals.buttons.edit') %>
+          </a>
+        </div>
+      </div>
+    </td>
+  </tr>
+<% end %>
+</tbody>
