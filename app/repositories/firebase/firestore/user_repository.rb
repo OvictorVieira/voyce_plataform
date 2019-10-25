@@ -14,6 +14,8 @@ module Firebase
         I18n.t('dashboard.user_to_artist.buttons.prefer_not_to_say')
       ]
 
+      DEFAULT_IMAGE_URL = 'https://firebasestorage.googleapis.com/v0/b/voyce2-dcae6.appspot.com/o/profile_images%2Fdefault-user-image-profile.jpeg?alt=media&token=86598e91-49bb-4ebf-87a3-d3e3397df1c1'.freeze
+
       attr_accessor :user_firebase_communicator, :user_firestore
 
       def initialize
