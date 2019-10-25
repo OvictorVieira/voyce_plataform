@@ -19,16 +19,16 @@ module Firebase
       end
 
       def transform_listener_in_artist
-        formated_data = format_data_to_update
-        firestore_response = user_repository.transform_listener_in_artist(formated_data, data[:user_id])
+        formatted_data = format_data_to_update
+        firestore_response = user_repository.transform_listener_in_artist(formatted_data, data[:user_id])
         raise_exception(firestore_response[:message]) unless firestore_response[:success]
 
         firestore_response
       end
 
       def update_user
-        formated_data = format_data_to_update
-        firestore_response = user_repository.update_user_data(formated_data, data[:user_id])
+        formatted_data = format_data_to_update
+        firestore_response = user_repository.update_user_data(formatted_data, data[:user_id])
         raise_exception(firestore_response[:message]) unless firestore_response[:success]
 
         firestore_response
@@ -48,7 +48,8 @@ module Firebase
           phone_number: data['phone_number'],
           state: data['state'],
           twitter_url: data['twitter_link'],
-          complete_name: data['complete_name']
+          complete_name: data['complete_name'],
+          image: UserRepository::DEFAULT_IMAGE_URL 
         }
       end
 
