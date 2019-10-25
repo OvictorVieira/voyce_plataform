@@ -49,7 +49,7 @@ module Firebase
           state: data['state'],
           twitter_url: data['twitter_link'],
           complete_name: data['complete_name'],
-          image: UserRepository::DEFAULT_IMAGE_URL
+          image: UserRepository::DEFAULT_IMAGE_URL 
         }
       end
 
