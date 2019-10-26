@@ -7,4 +7,10 @@ module HomeHelper
   def load_music_status_icon(status)
     %w(warning info danger success)[status]
   end
+
+  def load_first_goal
+    value = @goals.present? ? @goals.first.data[:price] : nil
+    format_currency_br(value)
+  end
+
 end

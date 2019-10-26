@@ -29,6 +29,12 @@ Rails.application.routes.draw do
     post '/musics/create', to: 'musics#create', as: 'create_music'
     get '/musics/edit/:id', to: 'musics#edit', as: 'edit_music'
     post '/musics/update', to: 'musics#update', as: 'update_music'
+
+    get '/goals', to: 'goals#index', as: 'goals'
+    get '/goals/new', to: 'goals#new', as: 'new_goal'
+    get '/goals/edit/:id', to: 'goals#edit', as: 'edit_goal'
+    post '/goals/create', to: 'goals#create', as: 'create_goal'
+    post '/goals/update', to: 'goals#update', as: 'update_goal'
   end
 
 end

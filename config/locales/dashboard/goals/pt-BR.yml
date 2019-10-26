@@ -1,0 +1,23 @@
+pt-BR:
+  dashboard:
+    goals:
+      title:
+        goals: 'Metas'
+        create_goal: 'Criação de Metas'
+        edit_goal: 'Edição de Metas'
+        goals_informations: 'Informações sobre a Meta'
+      buttons:
+        create: 'Criar Nova Meta'
+        save: 'Salvar'
+        edit: 'Editar'
+      fields:
+        goal_value: 'Valor da Meta'
+        description: 'Descrição'
+        no_meta: 'Nenhuma meta foi encontrada'
+      success:
+        success_on_create: 'Sucesso ao criar sua meta.'
+        success_on_update: 'Sucesso ao atualizar sua meta.'
+      error:
+        get_goals_error: 'Falha ao buscar suas metasl, por favor tente novamente.'
+        create_goal_error: 'Ocorreu erro ao criar meta, tente novamente.'
+        invalid_fields: 'Atenção! Para criar uma meta, preencha os campos Preço e Descrição.'

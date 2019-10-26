@@ -49,3 +49,5 @@ pt-BR:
         invalid_format_image: 'O formato da imagem é inválido, selecione uma imagem com formato válido!'
         image_obligatory: 'O envio da imagem é obrigatório!'
         save_image_error: 'Ocorreu erro ao tentar salvar imagem, tente novamente!'
+        fields_are_not_present: 'Ocorreu erro ao tentar criar o plano,
+                                 verifique se os campos obrigatórios estão preenchidos.'
