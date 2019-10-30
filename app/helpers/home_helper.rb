@@ -9,7 +9,7 @@ module HomeHelper
   end
 
   def load_first_goal
-    value = @goals.present? ? @goals.first.data[:price] : nil
+    value = @goals.first.present? ? @goals.first.data[:price] : nil
     format_currency_br(value)
   end
 
