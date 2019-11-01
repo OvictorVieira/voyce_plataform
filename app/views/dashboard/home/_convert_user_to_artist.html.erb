@@ -1,10 +1,31 @@
 <%= render partial: 'dashboard/partials_shared/header', locals: {
-    css_class: 'col-lg-7 col-md-10',
-    title: I18n.t('dashboard.user_to_artist.title', user_name: current_user_name),
-    description: I18n.t('dashboard.user_to_artist.description')
+  css_class: 'col-lg-7 col-md-10',
+  title: I18n.t('dashboard.user_to_artist.title', user_name: current_user_name),
+  description: I18n.t('dashboard.user_to_artist.description')
 } %>
 
 <%= render partial: 'dashboard/users/form_edit', locals: {
-    action: dashboard_convert_user_to_artist_path,
-    button_name: I18n.t('dashboard.user_to_artist.buttons.turn_artist')
+  action: dashboard_convert_user_to_artist_path,
+  load_edit_button: false
 } %>
+
+<div id="privacy-policy" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document" style="max-width: 80%;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title"><%= I18n.t('application.labels.privacy_policy') %></h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= I18n.t('application.messages.privacy_policy').html_safe %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary w-25" data-dismiss="modal" onclick="$('#form-action').submit();">
+          <%= I18n.t('dashboard.user_to_artist.buttons.turn_artist') %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
