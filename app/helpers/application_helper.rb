@@ -136,4 +136,10 @@ module ApplicationHelper
 
     INITIAL_GOAL
   end
+
+  def load_button(load_edit_button)
+    return render partial: 'guests/convert_user_to_artist_button' unless load_edit_button
+
+    render partial: 'dashboard/users/edit_button'
+  end
 end
