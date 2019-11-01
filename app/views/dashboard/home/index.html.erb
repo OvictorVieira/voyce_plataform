@@ -1,15 +1,15 @@
-<%= render 'dashboard/partials_shared/sidebar' %>
+<%= render partial: 'dashboard/partials_shared/sidebar' %>
 
 <div class="main-content">
 
-  <%= render 'dashboard/partials_shared/navbar' %>
+  <%= render partial: 'dashboard/partials_shared/navbar' %>
 
   <% if is_only_listener? %>
-    <%= render 'dashboard/home/convert_user_to_artist' %>
+    <%= render partial: 'dashboard/home/convert_user_to_artist' %>
   <% else %>
-    <%= render 'dashboard/home/index_content' %>
+    <%= render partial: 'dashboard/home/index_content' %>
   <% end %>
 
-  <%= render 'dashboard/partials_shared/footer' %>
+  <%= render partial: 'dashboard/partials_shared/footer' %>
 
 </div>
