@@ -13,7 +13,6 @@ require('clipboard');
 require('nouislider');
 require('nucleojs');
 require('onscreen');
-require('../core/plugins/fonte-awesome/js/all.min');
 require('../core/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');
 require('../core/plugins/prismjs/prism');
 require('../core/plugins/holderjs/holder.min');
