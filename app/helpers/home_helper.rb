@@ -13,4 +13,9 @@ module HomeHelper
     format_currency_br(value)
   end
 
+  def load_current_goal
+    value = @goals.first.present? ? @goals.first.data[:current_value] : nil
+    format_currency_br(value)
+  end
+
 end
