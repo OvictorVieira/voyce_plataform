@@ -39,14 +39,14 @@ module Firebase
       def format_data_to_update
         {
           biography: data['about_me'],
-          city: data['city'],
+          city: data['city'].downcase,
           email: data['email'],
           facebook_url: data['facebook_link'],
           gender: data['select_gender'].to_i,
           instagram_url: data['instagram_link'],
-          name: data['username'],
+          name: data['username'].downcase,
           phone_number: data['phone_number'],
-          state: data['state'],
+          state: data['state'].downcase,
           twitter_url: data['twitter_link'],
           complete_name: data['complete_name'],
           image: UserRepository::DEFAULT_IMAGE_URL,

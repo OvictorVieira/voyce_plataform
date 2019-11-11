@@ -26,7 +26,7 @@ module Firebase
 
         validate_the_price_is_valid
 
-        create_goal(fields_formatted)
+        create_goal(fields_formatted.merge!(current_value: 0))
       end
 
       def load_goal

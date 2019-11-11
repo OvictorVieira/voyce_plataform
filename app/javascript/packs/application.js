@@ -13,14 +13,12 @@ require('clipboard');
 require('nouislider');
 require('nucleojs');
 require('onscreen');
-require('../core/plugins/fonte-awesome/js/all.min');
 require('../core/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');
 require('../core/plugins/prismjs/prism');
 require('../core/plugins/holderjs/holder.min');
 require('../core/plugins/jquery-scroll-lock/dist/jquery-scrollLock.min');
 require('../core/plugins/jquery.scrollbar/jquery.scrollbar.min');
 require('../core/argon-dashboard');
-require('../core/plugins/jquery-mask/custom_mask');
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
