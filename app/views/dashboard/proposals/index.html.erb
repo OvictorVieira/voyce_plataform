@@ -60,9 +60,16 @@
                         </span>
                       </td>
                       <td class="text-right">
-                        <a class="btn btn-outline-warning w-25" href="<%= dashboard_edit_proposals_path(proposal.document_id) %>">
-                          <i class="fas fa-edit"></i>
-                        </a>
+                        <div class="dropdown">
+                          <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow" x-placement="bottom-end" style="position: absolute; transform: translate3d(-160px, 31px, 0px); top: 0px; left: 0px; will-change: transform;">
+                            <a class="dropdown-item" href="<%= dashboard_edit_proposals_path(proposal.document_id) %>">
+                              <%= I18n.t('dashboard.goals.buttons.edit') %>
+                            </a>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   <% end %>
