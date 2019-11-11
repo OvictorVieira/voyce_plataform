@@ -19,7 +19,6 @@ require('../core/plugins/holderjs/holder.min');
 require('../core/plugins/jquery-scroll-lock/dist/jquery-scrollLock.min');
 require('../core/plugins/jquery.scrollbar/jquery.scrollbar.min');
 require('../core/argon-dashboard');
-require('../core/plugins/jquery-mask/custom_mask');
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
